@@ -1,0 +1,96 @@
+{
+  "id": "brasil-real-2026",
+  "version": "0.5.1",
+  "contentApi": 1,
+  "tier": "presentation",
+  "name": "Brasil Real 2026 - Partidos e Congresso",
+  "description": "Brasil em 1º de janeiro de 2026. Projeto experimental com mod de apresentação, cenário complementar e extensão opcional do estúdio.\n\nANTES DE ASSINAR\nEste item da Oficina troca nomes e siglas. Ele não cria os 20 partidos em Novo jogo e não instala automaticamente o cenário ou a extensão. Para jogar com os 20 partidos, instale o cenário separado e use Carregar partida > Brasil_Real_2026_Experimental.\n\nDUAS OPÇÕES\nPadrão: mod + cenário. Os 20 partidos existem na campanha complementar, mas o estúdio original pode mostrar “alvo desconhecido” para os acrescentados.\nCom extensão: os mesmos mod e cenário, mais a extensão visual 0.1.0 para Windows/Geoplanetical 1.0.6. Os 20 partidos também aparecem com barrinhas no estúdio. A extensão exige instalação separada e pode precisar de atualização após mudanças do jogo. Não altera o motor da simulação.\n\nCONTEÚDO DO CENÁRIO\n20 partidos com nomes reais; Câmara com 513 cadeiras; Senado com 80 cadeiras partidárias e 1 independente; parte dos dirigentes e integrantes do governo com nomes reais. Referência histórica: início de 2026.\n\nLIMITES\nIdeologias, cores, apoio e atributos são calibrações de jogo. Apoio inicial usa proporção de cadeiras, não pesquisa de opinião. Retratos e personagens auxiliares continuam genéricos. O motor mantém simplificações eleitorais e legislativas. Não é uma reprodução integral do Brasil.\n\nGuarde sua campanha atual, habilite o mod, reinicie e carregue o cenário complementar. Salve o teste com outro nome.\n\nDownloads dos complementos e instruções: https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.5.1-experimental\n\nProjeto independente de Wander. Capa criada com IA. Versão 0.5.1.",
+  "authors": [
+    "Wander"
+  ],
+  "provides": {
+    "partyNames": {
+      "076:PT": {
+        "name": "Partido dos Trabalhadores",
+        "tag": "PT"
+      },
+      "076:PL": {
+        "name": "Partido Liberal",
+        "tag": "PL"
+      },
+      "076:MDB": {
+        "name": "Movimento Democrático Brasileiro",
+        "tag": "MDB"
+      },
+      "076:PSD": {
+        "name": "Partido Social Democrático",
+        "tag": "PSD"
+      },
+      "076:PP": {
+        "name": "Progressistas",
+        "tag": "PP"
+      },
+      "076:UNIAO": {
+        "name": "União Brasil",
+        "tag": "UNIÃO"
+      },
+      "076:REPUBLICANOS": {
+        "name": "Republicanos",
+        "tag": "REPUBLICANOS"
+      },
+      "076:PSB": {
+        "name": "Partido Socialista Brasileiro",
+        "tag": "PSB"
+      },
+      "076:PDT": {
+        "name": "Partido Democrático Trabalhista",
+        "tag": "PDT"
+      },
+      "076:PSDB": {
+        "name": "Partido da Social Democracia Brasileira",
+        "tag": "PSDB"
+      },
+      "076:CIDADANIA": {
+        "name": "Cidadania",
+        "tag": "CIDADANIA"
+      },
+      "076:PODE": {
+        "name": "Podemos",
+        "tag": "PODE"
+      },
+      "076:AVANTE": {
+        "name": "Avante",
+        "tag": "AVANTE"
+      },
+      "076:SOLIDARIEDADE": {
+        "name": "Solidariedade",
+        "tag": "SOLIDARIEDADE"
+      },
+      "076:PRD": {
+        "name": "Partido Renovação Democrática",
+        "tag": "PRD"
+      },
+      "076:PSOL": {
+        "name": "Partido Socialismo e Liberdade",
+        "tag": "PSOL"
+      },
+      "076:REDE": {
+        "name": "Rede Sustentabilidade",
+        "tag": "REDE"
+      },
+      "076:PCdoB": {
+        "name": "Partido Comunista do Brasil",
+        "tag": "PCdoB"
+      },
+      "076:PV": {
+        "name": "Partido Verde",
+        "tag": "PV"
+      },
+      "076:NOVO": {
+        "name": "Partido Novo",
+        "tag": "NOVO"
+      }
+    }
+  },
+  "thumbnail": "images/capa-brasil-real-2026.png"
+}

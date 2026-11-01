@@ -1,0 +1,132 @@
+{
+  "data_corte": "2026-01-01",
+  "status": "Senado verificado para1jan; Camara reconstruida por ultimoDCD+efetivacao29dez, com lacuna de eventuais outras mudancas23dez-1jan",
+  "senado": {
+    "metodo": "exercicios parlamentares cobrindo 2026-01-01, cruzados com historicos de filiacao; 81 pessoas, 3 por UF",
+    "bancadas": {
+      "PL": 15,
+      "PSD": 14,
+      "MDB": 10,
+      "PT": 9,
+      "PP": 7,
+      "REPUBLICANOS": 5,
+      "UNIAO": 5,
+      "PODE": 4,
+      "PSB": 4,
+      "PDT": 3,
+      "PSDB": 3,
+      "NOVO": 1,
+      "SEM_PARTIDO": 1
+    },
+    "fontes": [
+      "https://legis.senado.leg.br/dadosabertos/senador/lista/legislatura/57.json",
+      "https://legis.senado.leg.br/dadosabertos/senador/{codigo}/filiacoes.json",
+      "https://www12.senado.leg.br/noticias/materias/2026/01/26/ano-eleitoral-comeca-com-novo-desenho-de-blocos-partidarios-no-senado"
+    ],
+    "divergencia_resolvida": "Retrospectiva outubro menciona PSD13/PP8; exercicios+filiacoes para1jan e noticia26jan corroboram PSD14/PP7"
+  },
+  "camara": {
+    "status": "reconstrucao documentada com ressalva temporal",
+    "data_base": "2025-12-23",
+    "atualizacao": "Dr Flavio PL-RJ efetivado29dez2025",
+    "bancadas": {
+      "REPUBLICANOS": 44,
+      "MDB": 42,
+      "UNIÃO": 59,
+      "PSD": 47,
+      "PP": 50,
+      "REDE": 4,
+      "PDT": 16,
+      "PCdoB": 9,
+      "PL": 87,
+      "PT": 67,
+      "CIDADANIA": 4,
+      "PODE": 16,
+      "PSB": 16,
+      "PRD": 5,
+      "PV": 4,
+      "SOLIDARIEDADE": 5,
+      "AVANTE": 8,
+      "PSDB": 14,
+      "PSOL": 11,
+      "NOVO": 5
+    },
+    "total": 513,
+    "fontes": [
+      "https://imagem.camara.leg.br/Imagem/d/pdf/DCD0020251223002490000.PDF",
+      "https://www.camara.leg.br/deputados/227991/biografia"
+    ],
+    "limite": "Nao foi possivel consultar historicos de todos513 entre23dez e1jan; nao afirmar auditoria exaustiva de filiacao na data exata."
+  },
+  "calibracao": {
+    "ideologias": "Ainda nao calibradas por fontes; valores de testes sao sinteticos.",
+    "atributos_pessoais": "Valores do motor nao sao avaliacoes factuais de pessoas reais."
+  },
+  "dirigentes": {
+    "PT": {
+      "nome": "Edinho Silva",
+      "fonte": "https://pt.org.br/edinho-silva-e-eleito-novo-presidente-nacional-do-pt/"
+    },
+    "PL": {
+      "nome": "Valdemar Costa Neto",
+      "fonte": "https://partidoliberal.org.br/valdemar-e-bolsonaro-reunem-presidentes-estaduais-do-pl-para-alinhar-estrategias-rumo-a-2026/"
+    },
+    "MDB": {
+      "nome": "Baleia Rossi",
+      "fonte": "https://www.mdb.org.br/prefeito-de-joao-pessoa-na-paraiba-cicero-lucena-oficializa-filiacao-ao-mdb/"
+    },
+    "PSD": {
+      "nome": "Gilberto Kassab",
+      "fonte": "https://psd.org.br/noticias/jose-roberto-arruda-se-filia-ao-psd/"
+    },
+    "PP": {
+      "nome": "Ciro Nogueira",
+      "fonte": "https://progressistas.org.br/noticias-progressistas/ciro-nogueira-e-reeleito-presidente-nacional-do-progressistas/"
+    },
+    "UNIAO": {
+      "nome": "Antonio Rueda",
+      "fonte": "https://uniaobrasil.org.br/wp-content/uploads/2025/09/Nota-oficial-_assinados-com-Pedro-Lucas-Fernandes.pdf"
+    },
+    "REPUBLICANOS": {
+      "nome": "Marcos Pereira",
+      "fonte": "https://republicanos10.org.br/noticia/marcos-pereira-e-reeleito-presidente-nacional-do-republicanos"
+    },
+    "PSB": {
+      "nome": "João Campos",
+      "fonte": "https://psb40.org.br/joao-campos-assume-presidencia-do-psb-com-compromisso-de-renovacao-e-unidade-partidaria/"
+    },
+    "PDT": {
+      "nome": "Carlos Lupi",
+      "fonte": "https://pdt.org.br/index.php/carlos-lupi-retorna-a-presidencia-nacional-do-pdt/"
+    },
+    "PSDB": {
+      "nome": "Aécio Neves",
+      "fonte": "https://www.psdb.org.br/acompanhe/noticias/o-brasil-e-um-so-e-e-de-todos-nos-diz-aecio-neves-ao-assumir-a-presidencia-nacional-do-psdb/"
+    },
+    "PSOL": {
+      "nome": "Paula Coradi",
+      "fonte": "https://psol50.org.br/votepsol/2025/09/27/paula-coradi-presidenta-nacional-do-psol-tem-seu-visto-dos-eua-cancelado-pelo-governo-trump/"
+    },
+    "PODE": {
+      "nome": "Renata Abreu",
+      "fonte": "https://www.podemos.org.br/wp-content/uploads/2025/12/WEB-12-25-Informativo-Podemos-Dezembro_25-v2_compressed-1.pdf"
+    }
+  },
+  "governo": {
+    "presidente": "Luiz Inácio Lula da Silva",
+    "vice": "Geraldo Alckmin",
+    "Fazenda": "Fernando Haddad",
+    "Defesa": "José Múcio Monteiro",
+    "Relacoes_Exteriores": "Mauro Vieira",
+    "Justica": "Ricardo Lewandowski",
+    "Casa_Civil": "Rui Costa",
+    "fontes": [
+      "https://www.gov.br/planalto/pt-br/vice-presidencia/acesso-a-informacao/institucional/biografia-dos-vice-presidentes-da-republica/biografias-vice-presidentes-versao-final.pdf",
+      "https://www.gov.br/fazenda/pt-br/acesso-a-informacao/transparencia-e-prestacao-de-contas/rol-de-responsaveis/ministerio-da-fazenda-exercicio-de-2025",
+      "https://www.gov.br/defesa/pt-br/composicao/quem-e-quem",
+      "https://www.gov.br/mre/pt-br/composicao/gabinete-do-ministro-das-relacoes-exteriores",
+      "https://www.gov.br/mj/pt-br/acesso-a-informacao/institucional/sumario/quemequem/gabinete-do-ministro",
+      "https://www.gov.br/planalto/pt-br/acompanhe-o-planalto/agenda-do-presidente-da-republica-lula/agenda-do-presidente-da-republica/2025-11-11"
+    ]
+  }
+}

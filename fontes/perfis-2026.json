@@ -1,0 +1,170 @@
+{
+  "Luiz Inácio Lula da Silva": {
+    "born": 1945,
+    "bornMonth": 9,
+    "background": "unionist",
+    "since": 2023,
+    "careerRole": "head_of_state",
+    "fontes": [
+      "https://presidentes.an.gov.br/index.php/centro-de-referencia-de-acervos-presidenciais/assuntos/biografias/204-luiz-inacio-lula-da-silva"
+    ]
+  },
+  "Geraldo Alckmin": {
+    "born": 1952,
+    "bornMonth": 10,
+    "background": "physician",
+    "since": 2023,
+    "careerRole": "deputy",
+    "fontes": [
+      "https://www.camara.leg.br/noticias/89794-confira-o-perfil-dos-candidatos-a-presidencia-da-republica"
+    ]
+  },
+  "Fernando Haddad": {
+    "born": 1963,
+    "bornMonth": 0,
+    "background": "academic",
+    "since": 2023,
+    "careerRole": "minister",
+    "fontes": [
+      "https://portal.mec.gov.br/arquivos/pdf/acs_290705haddad.pdf"
+    ]
+  },
+  "José Múcio Monteiro": {
+    "born": 1948,
+    "bornMonth": 8,
+    "background": "engineer",
+    "since": 2023,
+    "careerRole": "minister",
+    "fontes": [
+      "https://www.gov.br/defesa/pt-br/composicao/gabinete-do-ministro/jose-mucio-monteiro-filho/@@download"
+    ]
+  },
+  "Mauro Vieira": {
+    "born": 1951,
+    "bornMonth": 1,
+    "background": "diplomat",
+    "since": 2023,
+    "careerRole": "minister",
+    "fontes": [
+      "https://legis.senado.leg.br/sdleg-getter/documento?disposition=inline&dm=2592333"
+    ]
+  },
+  "Ricardo Lewandowski": {
+    "born": 1948,
+    "bornMonth": 4,
+    "background": "jurist",
+    "since": 2024,
+    "careerRole": "minister",
+    "fontes": [
+      "https://www.al.ce.gov.br/noticias/51263-alece-entrega-titulo-de-cidadao-cearense-ao-ministro-ricardo-lewandowski"
+    ]
+  },
+  "Valdemar Costa Neto": {
+    "born": 1949,
+    "bornMonth": 7,
+    "background": "business",
+    "since": null,
+    "clearCareer": true,
+    "fontes": [
+      "https://www.camara.leg.br/deputados/73565?ano=2011"
+    ],
+    "nota": "background e categoria mais proxima do motor; inicio de mandato partidario nao afirmado"
+  },
+  "Baleia Rossi": {
+    "born": 1972,
+    "bornMonth": 5,
+    "background": "business",
+    "since": null,
+    "clearCareer": true,
+    "fontes": [
+      "https://www.camara.leg.br/deputados/178975/biografia"
+    ],
+    "nota": "background e categoria mais proxima do motor; inicio de mandato partidario nao afirmado"
+  },
+  "Gilberto Kassab": {
+    "born": 1960,
+    "bornMonth": 7,
+    "background": "engineer",
+    "since": null,
+    "clearCareer": true,
+    "fontes": [
+      "https://psd.org.br/noticias/dilma-empossa-gilberto-kassab-presidente-nacional-do-psd-no-ministerio-das-cidades/"
+    ],
+    "nota": "background e categoria mais proxima do motor; inicio de mandato partidario nao afirmado"
+  },
+  "Ciro Nogueira": {
+    "born": 1968,
+    "bornMonth": 10,
+    "background": "jurist",
+    "since": null,
+    "clearCareer": true,
+    "fontes": [
+      "https://www25.senado.leg.br/pt_BR/web/senadores/senador/-/perfil/739"
+    ],
+    "nota": "background e categoria mais proxima do motor; inicio de mandato partidario nao afirmado"
+  },
+  "Marcos Pereira": {
+    "born": 1972,
+    "bornMonth": 3,
+    "background": "jurist",
+    "since": null,
+    "clearCareer": true,
+    "fontes": [
+      "https://www.camara.leg.br/deputados/204506/biografia"
+    ],
+    "nota": "background e categoria mais proxima do motor; inicio de mandato partidario nao afirmado"
+  },
+  "João Campos": {
+    "born": 1993,
+    "bornMonth": 10,
+    "background": "engineer",
+    "since": null,
+    "clearCareer": true,
+    "fontes": [
+      "https://www.camara.leg.br/deputados/204429/biografia"
+    ],
+    "nota": "background e categoria mais proxima do motor; inicio de mandato partidario nao afirmado"
+  },
+  "Carlos Lupi": {
+    "born": 1957,
+    "bornMonth": 2,
+    "background": "academic",
+    "since": null,
+    "clearCareer": true,
+    "fontes": [
+      "https://pdt.org.br/index.php/timeline_slider_post/carlos-lupi-1631957/"
+    ],
+    "nota": "background e categoria mais proxima do motor; inicio de mandato partidario nao afirmado"
+  },
+  "Aécio Neves": {
+    "born": 1960,
+    "bornMonth": 2,
+    "background": "economist",
+    "since": null,
+    "clearCareer": true,
+    "fontes": [
+      "https://www.camara.leg.br/deputados/74646/biografia"
+    ],
+    "nota": "background e categoria mais proxima do motor; inicio de mandato partidario nao afirmado"
+  },
+  "Renata Abreu": {
+    "born": 1982,
+    "bornMonth": 3,
+    "background": "jurist",
+    "since": null,
+    "clearCareer": true,
+    "fontes": [
+      "https://www.camara.leg.br/deputados/178989/biografia"
+    ],
+    "nota": "background e categoria mais proxima do motor; inicio de mandato partidario nao afirmado"
+  },
+  "Paula Coradi": {
+    "background": "academic",
+    "since": null,
+    "clearCareer": true,
+    "fontes": [
+      "https://psol50.org.br/presidencia-2026/"
+    ],
+    "nota": "nascimento nao verificado; permanece parametro de simulacao"
+  }
+}

@@ -1,0 +1,7 @@
+*.asar
+*.exe
+*.dll
+*.gsav
+*.zip
+__pycache__/
+*.log
