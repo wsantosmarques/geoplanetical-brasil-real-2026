@@ -1,0 +1,26 @@
+[h1]Brasil Real 2026 | 0.7 experimental[/h1]
+Brasil com referência em 1º de janeiro de 2026.
+
+[h2]Duas formas de usar[/h2]
+[b]Só este mod da Oficina:[/b] nomes e siglas dos partidos disponíveis, nome e foto de Lula. O formato oficial não cria partidos ou os demais personagens.
+
+[b]Versão completa com instalador:[/b] 20 partidos desde Novo jogo, Câmara/Senado com 513/81, 47 identidades históricas, 42 fotos reais e quadro de fontes em Política → Personalidades. Windows / versão 1.0.7 estudada. Feche o jogo, execute o EXE e clique Instalar / atualizar.
+[url=https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.7.0-experimental]Baixar complemento completo e ler instruções[/url]
+
+[b]IMPORTANTE: comece uma campanha nova após instalar o complemento.[/b] Campanhas anteriores, inclusive da 0.6, não são convertidas. O cenário antigo também não recebe essas identidades. Seus arquivos de save são preservados.
+
+[h2]Direções partidárias e governo[/h2]
+Presidências nacionais e lideranças na Câmara são mostradas separadamente. REDE tem dois co-porta-vozes; PCdoB distingue Nádia Campeão e Luciana Santos. Lideranças compartilhadas de federações não duplicam pessoas nem alteram sua filiação.
+
+Ministros compatíveis com as pastas nativas: Fernando Haddad, José Múcio Monteiro, Mauro Vieira e Ricardo Lewandowski. O motor só tem cinco pastas abstratas; Interior permanece fictício e não criamos todos os ministérios reais.
+
+[h2]O que ainda falta[/h2]
+Cinco retratos aguardam fonte reutilizável confirmada: Antonio Rueda, Paula Coradi, Marcus Vinícius Ferreira, Iaraci Dias e Eduardo Ribeiro. Eles aparecem com nome, cargo histórico e “Foto pendente”. Outros personagens auxiliares do jogo ainda podem ser genéricos.
+
+Apoio, atributos e comportamento incluem calibrações de jogo. O quadro histórico documenta o início de 2026; acontecimentos posteriores seguem a simulação. Não é reprodução integral do sistema político brasileiro.
+
+[h2]Imagens e fontes[/h2]
+Os retratos de políticos são fotografias reais. A capa foi criada com IA. Foto de Lula: Ricardo Stuckert/PR, CC BY 2.0, via Wikimedia Commons. Créditos individuais, licenças, fontes e capturas no repositório:
+[url=https://github.com/wsantosmarques/geoplanetical-brasil-real-2026]Documentação e imagens da versão completa[/url]
+
+Projeto experimental independente, sem vínculo com partidos ou com o desenvolvedor do jogo.

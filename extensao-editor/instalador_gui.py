@@ -5,7 +5,7 @@ from tkinter import ttk,filedialog,messagebox
 from instalar_extensao import operation_lock,_install,_restore,check_closed,sha,write_json
 from construir import identify
 HERE=pathlib.Path(getattr(sys,'_MEIPASS',pathlib.Path(__file__).resolve().parent))
-VERSION='0.6.0'
+VERSION='0.7.0'
 def steam_games():
     roots=[]
     try:
@@ -28,13 +28,17 @@ def prepare_names():
         settings=json.loads(config.read_text(encoding='utf8'));shutil.copy2(config,backup/'mods.json')
     else:settings={'version':1,'order':[],'disabled':[]}
     if not isinstance(settings.get('order',[]),list) or not isinstance(settings.get('disabled',[]),list):raise ValueError('Configuracao de mods invalida')
-    if (folder/'mod.json').exists():shutil.copy2(folder/'mod.json',backup/'mod.json')
-    image=folder/'images/capa-brasil-real-2026.png';image.parent.mkdir(exist_ok=True)
-    if image.exists():shutil.copy2(image,backup/'capa-brasil-real-2026.png')
     order=settings.setdefault('order',[])
     if 'brasil-real-2026' not in order:order.append('brasil-real-2026')
     settings['disabled']=[x for x in settings.get('disabled',[]) if x!='brasil-real-2026']
-    targets={folder/'mod.json':json.dumps(manifest,ensure_ascii=False,indent=2).encode('utf8'),image:(source/'images/capa-brasil-real-2026.png').read_bytes(),config:json.dumps(settings,ensure_ascii=False,indent=2).encode('utf8')}
+    targets={}
+    for file in source.rglob('*'):
+        if not file.is_file():continue
+        relative=file.relative_to(source);target=folder/relative
+        targets[target]=file.read_bytes()
+        if target.exists():
+            dest=backup/'mod'/relative;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(target,dest)
+    targets[config]=json.dumps(settings,ensure_ascii=False,indent=2).encode('utf8')
     return {'backup':str(backup),'targets':targets,'originals':{p:p.read_bytes() if p.exists() else None for p in targets}}
 def commit_names(plan):
     changed=[]
@@ -42,7 +46,7 @@ def commit_names(plan):
         for p,old in plan['originals'].items():
             if (p.read_bytes() if p.exists() else None)!=old:raise RuntimeError('Um arquivo do mod mudou enquanto era preparado: '+str(p))
         for p,new in plan['targets'].items():
-            temp=p.with_name(p.name+'.brasil-real.tmp');temp.write_bytes(new);os.replace(temp,p);changed.append(p)
+            p.parent.mkdir(parents=True,exist_ok=True);temp=p.with_name(p.name+'.brasil-real.tmp');temp.write_bytes(new);os.replace(temp,p);changed.append(p)
     except Exception:
         for p in reversed(changed):
             old=plan['originals'][p]
@@ -65,8 +69,9 @@ def perform(action,game):
                 archive=pathlib.Path(os.environ['LOCALAPPDATA'])/'BrasilRealEditor/stale-receipts';archive.mkdir(parents=True,exist_ok=True)
                 shutil.copy2(state,archive/(receipt.get('operationId','anterior')+'.json'));state.unlink()
                 _install(game,HERE/'catalogo-brasil-2026.json');game_changed=True
-            elif receipt.get('extensionVersion')!='0.2.0':
+            elif receipt.get('extensionVersion')!='0.3.0':
                 # Atualizacao usa o backup original; se falhar a nova instalacao, permanece o jogo original.
+                identify(pathlib.Path(receipt['backup']))
                 print('Restaurando a extensao anterior...',flush=True);_restore(game);_install(game,HERE/'catalogo-brasil-2026.json');game_changed=True
         else:_install(game,HERE/'catalogo-brasil-2026.json');game_changed=True
         try:
@@ -74,14 +79,14 @@ def perform(action,game):
         except Exception:
             if game_changed:_restore(game)
             raise
-        return 'Concluido. Abra o jogo e escolha Brasil em Novo jogo. As campanhas existentes conservam seus partidos. Para os 20, comece uma campanha nova ou carregue o cenario complementar.'
+        return 'Concluído. Abra Novo jogo e escolha Brasil para os 20 partidos, 47 identidades e 42 fotos. Consulte Política > Personalidades para ver fontes e lideranças. As campanhas existentes foram preservadas e não recebem as novas identidades.'
 class App:
     def __init__(self,root):
         self.root=root;root.title('Brasil Real 2026 | Instalador '+VERSION);root.geometry('730x470');root.minsize(650,430);self.busy=False;self.events=queue.Queue()
         style=ttk.Style();style.theme_use('vista');style.configure('Title.TLabel',font=('Segoe UI',20,'bold'));style.configure('TLabel',font=('Segoe UI',10));style.configure('TButton',font=('Segoe UI',10),padding=8)
         body=ttk.Frame(root,padding=24);body.pack(fill='both',expand=True)
         ttk.Label(body,text='Brasil Real 2026',style='Title.TLabel').pack(anchor='w')
-        ttk.Label(body,text='20 partidos em campanhas novas, no eleitorado e no estúdio.',wraplength=650).pack(anchor='w',pady=(4,14))
+        ttk.Label(body,text='20 partidos, 47 identidades históricas e 42 fotos reais em campanhas novas.',wraplength=650).pack(anchor='w',pady=(4,14))
         ttk.Label(body,text='Pasta do Geoplanetical').pack(anchor='w');row=ttk.Frame(body);row.pack(fill='x',pady=5)
         found=steam_games();self.path=tk.StringVar(value=str(found[0]) if found else '')
         ttk.Entry(row,textvariable=self.path).pack(side='left',fill='x',expand=True);self.browse=ttk.Button(row,text='Procurar',command=self.choose);self.browse.pack(side='left',padx=(8,0))
@@ -90,7 +95,7 @@ class App:
         self.install=ttk.Button(buttons,text='Instalar / atualizar',command=lambda:self.start('install'));self.install.pack(side='left')
         self.restore=ttk.Button(buttons,text='Restaurar jogo',command=lambda:self.start('restore'));self.restore.pack(side='left',padx=8)
         self.bar=ttk.Progressbar(body,mode='indeterminate');self.bar.pack(fill='x',pady=10)
-        self.status=tk.StringVar(value='Pronto para instalar. Compatível com as versões 1.0.6 e 1.0.7 estudadas.')
+        self.status=tk.StringVar(value='Pronto para instalar. Compatível com a versão 1.0.7 estudada.')
         ttk.Label(body,textvariable=self.status,wraplength=650).pack(anchor='w')
         root.protocol('WM_DELETE_WINDOW',self.close);root.after(150,self.poll)
     def choose(self):
@@ -123,7 +128,7 @@ def main():
     p=argparse.ArgumentParser();p.add_argument('--self-test',action='store_true');p.add_argument('--result',type=pathlib.Path);args=p.parse_args()
     root=tk.Tk()
     if args.self_test:
-        root.withdraw();app=App(root);data={'frozen':bool(getattr(sys,'frozen',False)),'tk':root.tk.call('info','patchlevel'),'catalogParties':len(json.loads((HERE/'catalogo-brasil-2026.json').read_text(encoding='utf8'))),'presetParties':len(json.loads((HERE/'novo-jogo-brasil-2026.json').read_text(encoding='utf8'))['preset']['parties']),'modVersion':json.loads((HERE/'mod/mod.json').read_text(encoding='utf8'))['version'],'mutations':False};root.update();root.destroy()
+        root.withdraw();app=App(root);data={'frozen':bool(getattr(sys,'frozen',False)),'tk':root.tk.call('info','patchlevel'),'catalogParties':len(json.loads((HERE/'catalogo-brasil-2026.json').read_text(encoding='utf8'))),'presetParties':len(json.loads((HERE/'novo-jogo-brasil-2026.json').read_text(encoding='utf8'))['preset']['parties']),'historicalPeople':len(json.loads((HERE/'identidades/pessoas-2026.json').read_text(encoding='utf8'))['people']),'photoFiles':len(list((HERE/'identidades/fotos').glob('*'))),'modVersion':json.loads((HERE/'mod/mod.json').read_text(encoding='utf8'))['version'],'mutations':False};root.update();root.destroy()
         if args.result:args.result.write_text(json.dumps(data,indent=2),encoding='utf8')
         return
     App(root);root.mainloop()

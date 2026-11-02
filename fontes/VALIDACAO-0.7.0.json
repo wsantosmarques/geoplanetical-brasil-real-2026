@@ -1,0 +1,82 @@
+{
+  "version": "0.7.0",
+  "integrationVersion": "0.3.0",
+  "gameVersion": "1.0.7",
+  "referenceDate": "2026-01-01",
+  "isolatedMotor": {
+    "passed": true,
+    "seeds": [
+      20260101,
+      20260102
+    ],
+    "people": 47,
+    "ministers": {
+      "economy": "Fernando Haddad",
+      "defense": "José Múcio Monteiro",
+      "foreign": "Mauro Vieira",
+      "justice": "Ricardo Lewandowski"
+    },
+    "saveReload": true,
+    "advanceDays": 1
+  },
+  "nativeDesktop": {
+    "passed": true,
+    "setupPartyIds": [
+      "PL",
+      "PT",
+      "UNIAO",
+      "PP",
+      "PSD",
+      "REPUBLICANOS",
+      "MDB",
+      "PDT",
+      "PODE",
+      "PSB",
+      "PSDB",
+      "PSOL",
+      "PCdoB",
+      "AVANTE",
+      "NOVO",
+      "PRD",
+      "SOLIDARIEDADE",
+      "CIDADANIA",
+      "PV",
+      "REDE"
+    ],
+    "historicalPeople": 47,
+    "historicalPhotos": 42,
+    "nativeLoadedPhotos": 42,
+    "chambers513And81": true,
+    "voterLegendCounts": [
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "errors": []
+  },
+  "preservation": {
+    "realInBench": 44,
+    "realWithParty": 44,
+    "oldPartyCount": 4,
+    "oldRealKeys": 0,
+    "officialManifestValid": true,
+    "errors": [],
+    "passed": true
+  },
+  "longCampaignWithIdentitiesTested": false,
+  "steamPublished": false
+}

@@ -1,5 +1,6 @@
-"""Brasil Real 0.2: presets de novas campanhas, preview e editor."""
+"""Brasil Real 0.3: presets de novas campanhas, preview e editor."""
 import pathlib,json,re
+from pessoas_patch import patch_people
 from asar_local import Asar,digest,update_exe_integrity
 EXPECTED_HEADER='dd101fe1a0f2d79773301a8c54094832f24fde2b88fbf5004f71090801417df0'
 EXPECTED_EXE='a5bf1c2614bc0c9f563d0413943f04a9ffe9c2e7a8b831f8f495845647512335'
@@ -11,7 +12,7 @@ SUPPORTED={
 }
 def identify(game):
     ar=Asar(game/'resources/app.asar');version=json.loads(ar.read('package.json'))['version'];allowed=SUPPORTED.get(version)
-    if not allowed or ar.header_hash!=allowed['header'] or digest((game/'Geoplanetical.exe').read_bytes())!=allowed['exe']:raise ValueError('Arquivos diferentes das versoes 1.0.6/1.0.7 estudadas')
+    if version!='1.0.7' or not allowed or ar.header_hash!=allowed['header'] or digest((game/'Geoplanetical.exe').read_bytes())!=allowed['exe']:raise ValueError('Arquivos diferentes da versao 1.0.7 estudada')
     return version
 def object_span(s,start):
     if s[start]!='{':raise ValueError('Inicio de objeto incorreto')
@@ -77,14 +78,15 @@ def build(game,out,catalog_file):
     start=matches[0].start();end=app.index('function ',start+10);old=app[start:end]
     if old.count('return t.sort(')!=1:raise ValueError('Ordenacao de catalogo mudou')
     app=app[:start]+old.replace('return t.sort(','if(Array.isArray(window.__BRASIL_EDITOR_CATALOG__)){t=t.filter(q=>q.countryKey!=="076");t.push(...window.__BRASIL_EDITOR_CATALOG__);}return t.sort(')+app[end:]
-    prefix='/* Brasil Real 0.2.0: novos jogos e editor. Nao migra saves existentes. */\nwindow.__BRASIL_REAL_EDITOR__={version:"0.2.0",gameVersion:'+json.dumps(version)+',newGames:true};window.__BRASIL_EDITOR_CATALOG__='+json.dumps(catalog,ensure_ascii=False,separators=(',',':'))+';\n'
+    prefix='/* Brasil Real 0.3.0: novos jogos e editor. Nao migra saves existentes. */\nwindow.__BRASIL_REAL_EDITOR__={version:"0.3.0",gameVersion:'+json.dumps(version)+',newGames:true};window.__BRASIL_EDITOR_CATALOG__='+json.dumps(catalog,ensure_ascii=False,separators=(',',':'))+';\n'
+    app,new_worker=patch_people(app,new_worker,catalog_file.parent,version)
     app=prefix+app
     locale=json.loads(locale_bytes)
     for key,value in list(locale.items()):
         if value=='Jogo base':locale[key]='Referência Brasil Real (novos jogos)'
-        if value=='Estúdio de mods':locale[key]='Estúdio de mods · Brasil Real 0.2'
+        if value=='Estúdio de mods':locale[key]='Estúdio de mods · Brasil Real 0.3'
     changed={'renderer/app.bundle.js':app.encode(),'renderer/simulation-worker.bundle.js':new_worker.encode(),'renderer/locales/pt-BR.json':json.dumps(locale,ensure_ascii=False,separators=(',',':')).encode()}
     built=ar.append_replacements(out/'resources/app.asar',changed);exe=update_exe_integrity(game/'Geoplanetical.exe',out/'Geoplanetical.exe',ar.header_hash,built.header_hash)
     if exe['originalExeSha256']!=allowed['exe']:raise ValueError('Executavel mudou durante a construcao')
-    result={'version':'0.2.0','gameVersion':version,'originalHeaderSha256':ar.header_hash,'patchedHeaderSha256':built.header_hash,'newGamePresetPartyIds':[p['id'] for p in seed['preset']['parties']],'replacedFiles':list(changed),'fileHashes':{k:digest(v) for k,v in changed.items()},'existingSavesMigrated':False,**exe}
+    result={'version':'0.3.0','gameVersion':version,'originalHeaderSha256':ar.header_hash,'patchedHeaderSha256':built.header_hash,'newGamePresetPartyIds':[p['id'] for p in seed['preset']['parties']],'replacedFiles':list(changed),'fileHashes':{k:digest(v) for k,v in changed.items()},'existingSavesMigrated':False,**exe}
     (out/'construcao.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf8');return result

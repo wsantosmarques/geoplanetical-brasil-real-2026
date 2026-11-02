@@ -1,71 +1,74 @@
-# Brasil Real 2026 | 0.6.0 experimental
+# Brasil Real 2026 | 0.7.0 experimental
 
 ![Capa](imagens/capa.png)
 
-[**Baixar o instalador único para Windows**](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/download/v0.6.0-experimental/BrasilReal2026-Instalador-0.6.0.exe)
+[**Baixar instalador único para Windows**](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/download/v0.7.0-experimental/BrasilReal2026-Instalador-0.7.0.exe)
 
-[Releases e versões anteriores](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases). A versão 0.5.1 era apenas mod + cenário e uma extensão visual; a 0.6.0 acrescenta campanhas novas com os 20 partidos.
+Brasil em **1º de janeiro de 2026**: 20 partidos em campanhas novas, Câmara com 513 cadeiras e Senado com 81. A versão 0.7 acrescenta 47 identidades históricas e 42 fotos reais, com fontes, créditos e licenças individuais.
 
-## Instalação simples
+## Instalação
 
-Execute `BrasilReal2026-Instalador-0.6.0.exe`, confira a pasta detectada e clique em **Instalar / atualizar**. Não é necessário instalar Python ou executar comandos. Feche o Geoplanetical antes da instalação. A janela também oferece **Restaurar jogo**.
+Feche o Geoplanetical, execute o `.exe`, confira a pasta detectada e clique em **Instalar / atualizar**. Depois, abra **Novo jogo → Brasil**. Em **Política → Personalidades**, o quadro histórico apresenta presidências nacionais, líderes na Câmara, presidente, vice e ministros compatíveis com o motor.
 
-O instalador configura o mod de nomes e instala a integração 0.2.0. Requer Windows e os arquivos exatos das versões 1.0.6 e 1.0.7 estudadas do jogo; versões diferentes são recusadas. Reserve cerca de 12 GB para cópia temporária e backups. O instalador ainda não possui assinatura digital.
+Requer Windows e os arquivos exatos da versão **1.0.7 estudada**. Esta atualização recusa versões diferentes antes de substituir o jogo. O instalador detecta a Steam, inclui os arquivos necessários e dispensa Python. Reserve cerca de 12 GB para cópias temporárias e backups; o executável ainda não possui assinatura digital.
 
-## O que muda
+## O que funciona
 
-- **Novo jogo, Brasil:** o preset passa de quatro blocos agregados para 20 partidos. A opção Liderar um partido oferece os 20, incluindo PT; Liderar o país continua disponível.
-- **Campanha nova:** a simulação nasce com os mesmos 20 IDs, ideologias, apoios e cores da escolha inicial. Câmara com 513 cadeiras; Senado com 81, incluindo uma cadeira independente.
-- **Governo inicial:** núcleo configurado com PT, PCdoB, PV e PSB. É uma aproximação mínima, não uma reprodução de todos os apoios, federações e ministérios.
-- **Eleitorado:** a distribuição exposta para cada grupo brasileiro mostra os 20 partidos, em vez de resumir apenas os três primeiros. Os cálculos já percorriam a lista completa de partidos. As larguras usam frações exatas; só os textos são arredondados.
-- **Estúdio:** os 20 partidos permanecem disponíveis com indicadores de esquerda/direita.
-- **Nomes:** mod de apresentação atualizado para 0.6.0, incluindo a apresentação do presidente como Luiz Inácio Lula da Silva. Retratos e muitos personagens auxiliares ainda são genéricos.
+- Escolha dos 20 partidos desde Novo jogo, inclusive PT; também é possível liderar o país.
+- Os mesmos 20 partidos na simulação, nas câmaras e nas intenções de voto dos 17 grupos sociais brasileiros.
+- Estúdio com os 20 partidos e indicadores de esquerda/direita.
+- 47 pessoas distintas: direções nacionais, lideranças na Câmara, presidente, vice e quatro titulares ministeriais nativos. REDE tem dois co-porta-vozes; PCdoB distingue presidência interina de Nádia Campeão e presidência licenciada de Luciana Santos.
+- Talíria Petrone aparece uma única vez, filiada ao PSOL, com liderança compartilhada da federação PSOL–REDE. Lindbergh Farias mantém filiação ao PT e referência da Federação Brasil da Esperança.
+- Nomes e retratos nas telas nativas de pessoas e governo, além do quadro histórico com fontes. A chave do retrato acompanha a pessoa e persiste no save; sucessores gerados pelo motor não herdam a foto por ocupar o cargo.
+- Fazenda: Fernando Haddad; Defesa: José Múcio Monteiro; Relações Exteriores: Mauro Vieira; Justiça: Ricardo Lewandowski. O jogo usa cinco pastas abstratas, sem representar todas as pastas brasileiras.
+
+## Limitações desta versão
+
+**Cinco fotos pendentes de fonte reutilizável confirmada:** Antonio Rueda, Paula Coradi, Marcus Vinícius de Vasconcelos Ferreira, Iaraci Dias e Eduardo Ribeiro. Eles têm nome e referência histórica, com o aviso “Foto pendente”. As 42 imagens existentes são fotografias, sem retratos gerados por IA. Algumas são anteriores a 2025.
+
+**Interior permanece fictício:** não foi atribuída uma equivalência brasileira que o motor não estabelece. Luciana Santos aparece com sua função histórica de ministra de Ciência, Tecnologia e Inovação no quadro, mas esta versão não cria uma nova pasta executável de CT&I. Demais personagens auxiliares e civis do jogo podem continuar genéricos.
+
+O quadro documenta cargos de 01/01/2026; não impõe as trocas reais dos meses seguintes. O motor pode dar outros cargos às pessoas durante a campanha. Atributos, comportamento e ideologias individuais são parâmetros de jogo, não avaliações factuais. Parentes fictícios herdados são desvinculados na inicialização; eventos familiares futuros continuam sendo simulação. Datas de nascimento não confirmadas ficam sem informação.
+
+O apoio inicial é calibrado a partir das cadeiras, não é pesquisa eleitoral. Ideologias, cores, organização partidária, núcleo de governo e regras eleitorais incluem aproximações. Não é um cadastro de todos os deputados e senadores nem uma reprodução integral das instituições brasileiras. A versão 0.7 não amplia o número de ministérios do motor.
 
 ## Partidas existentes
 
-**Uma campanha antiga com quatro partidos continua com quatro.** O instalador não abre, converte nem regrava saves. Para usar os 20, comece uma campanha nova depois de instalar, ou carregue o cenário complementar anteriormente distribuído. Uma campanha iniciada antes da integração não recebe os partidos retroativamente.
+**As identidades novas exigem nova campanha.** O instalador não abre, converte nem regrava saves. Campanhas iniciadas na versão 0.6 ou antes conservam seus personagens. O cenário antigo distribuído separadamente também não recebe as 47 identidades.
 
-O mod de nomes pode alterar a apresentação de nomes em campanhas antigas enquanto estiver ativo, sem regravar o conteúdo do save.
+O mod de apresentação de nomes e retrato de Lula pode mudar a apresentação visual de campanhas anteriores enquanto estiver ativo, sem regravar o save. Para removê-lo, desative o mod no gerenciador.
 
-## Backup e restauração
+## Oficina e complemento
 
-Os arquivos originais do jogo são guardados em `%LOCALAPPDATA%/BrasilRealEditor/backups`. Metadados e configuração anteriores do mod ficam em `mod-backups` na mesma área. O instalador mantém um recibo na pasta do jogo e verifica hashes antes de instalar ou restaurar.
+| Instalação | Resultado |
+|---|---|
+| Mod de apresentação da Oficina, sozinho | Nomes/siglas e apresentação de Lula. Não cria 20 partidos ou os demais dirigentes/ministros. |
+| Instalador completo `.exe` | Mod de apresentação + integração 0.3.0, novos presets, 47 identidades e 42 fotos. Requer nova campanha para esses dados. |
 
-**Restaurar jogo** recupera os arquivos do jogo e preserva os mods e saves. Atualizações da Steam ou verificação de arquivos podem remover a integração; ela só deve ser reinstalada depois de uma conferência de compatibilidade. Os fuses e a verificação de integridade do Electron continuam ativos.
+A publicação Steam é separada. A Oficina não instala o patch do executável/ASAR. As versões anteriores permanecem em [Releases](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases).
 
-Se ocorrer estado `recovery-required`, preserve a pasta temporária e o backup indicados no recibo. Uma gravação incompleta pode exigir recuperação manual. O instalador recusa substituir arquivos que tenham mudado por outra origem.
+## Backups e restauração
 
-## Fidelidade
+Originais do jogo ficam em `%LOCALAPPDATA%/BrasilRealEditor/backups`; arquivos anteriores do mod e configuração em `mod-backups`. **Restaurar jogo** recupera os arquivos do jogo, preservando mods e saves. Atualizações da Steam podem remover a integração e exigem nova conferência de compatibilidade. Recibos e hashes impedem restauração sobre arquivos de outra versão. Os fuses e a verificação de integridade do Electron continuam ativos.
 
-Apoio inicial é uma calibração baseada em cadeiras, não pesquisa de intenção de voto. Ideologias, atributos e cores incluem aproximações. O motor mantém simplificações eleitorais, ministeriais e legislativas; este pacote não implementa integralmente o sistema brasileiro nem prevê resultados reais. Os partidos não equivalem a um cadastro individual completo de deputados e senadores.
+## Fontes e direitos das imagens
 
-Fontes e histórico: https://github.com/wsantosmarques/geoplanetical-brasil-real-2026
+[Cadastro e fontes de cada pessoa](fontes/identidades/pessoas-2026.json) · [Créditos e licenças dos 42 retratos](fontes/identidades/CREDITOS.md).
 
-Esta versão exige nova campanha para validar o comportamento completo. A publicação na Oficina Steam continua separada: assinar apenas o mod oficial não instala a integração.
+As licenças de cada fotografia permanecem aplicáveis, incluindo atribuição e compartilhamento pela mesma licença quando exigido. Arquivos baixados do Commons são preservados sem edição local, com enquadramento por CSS. O uso não indica apoio de pessoas ou instituições ao projeto. A capa do mod foi criada com IA; os retratos de políticos são fotografias reais.
 
-
-## Fontes e imagens
-
-As fontes históricas e aproximações estão em `fontes`. O mod oficial está em `oficina`; assinar apenas esse mod não instala os novos presets. A capa foi criada com IA para o projeto. Retratos reais de políticos ainda não foram adicionados. O código calcula o patch a partir da instalação local e não redistribui o executável ou o ASAR original do jogo.
+O código calcula o patch a partir da instalação local. Este repositório e o instalador não redistribuem o executável ou o ASAR original do jogo.
 
 ## Validação
 
-- Na 1.0.6: 20 partidos desde o bootstrap; controle de MDB e PT; 310 dias com eleições, recarga e totais de 513/81. Eleitorado com 20 partidos nos 17 grupos. Uma cópia de save antigo permaneceu com os quatro IDs originais.
-- Revisão final da coalizão: núcleo de PT, PCdoB, PV e PSB, avanço de 31 dias e recarga.
-- Na 1.0.7: bootstrap, controle de MDB e PT, coalizão, 31 dias e recarga.
-- Instalador único: execução do runtime embutido com Tk e arquivos de 20 partidos, sem depender de Python instalado.
+Testes isolados da 0.7: duas sementes, 47 identidades, filiações, quatro ministros, salvar/recarregar e avanço de um dia. Teste desktop em cópia separada: 20 opções no Novo jogo, Câmara/Senado 513/81, 47 registros históricos, 42 retratos carregados tanto no quadro quanto nos cartões nativos, eleitorado com 20 legendas nos 17 grupos e nenhum erro de execução. O instalador empacotado verifica 47 pessoas e 42 fotos sem depender de Python externo.
 
-Esses testes não equivalem a validar todas as regras do processo político brasileiro.
+Na 0.6 foram testados 310 dias com eleições e recarga na 1.0.6 e 31 dias na 1.0.7. Essas provas anteriores não são um teste de longo prazo das identidades da 0.7. Esta é uma versão experimental para novas campanhas.
 
+## Capturas
 
-## Capturas da integração na 1.0.7
+![Presidências e líderes na Câmara com fotos e fontes](imagens/liderancas-2026.png)
 
-Capturas do aplicativo desktop em cópia isolada, com mod local. A campanha foi iniciada pelo Novo jogo, escolhendo MDB. Nenhuma campanha do usuário foi usada nas imagens.
+![Ministros nos cartões nativos do governo](imagens/ministros-2026.png)
 
-![Escolha dos 20 partidos](imagens/escolha-20.png)
-
-![Câmara com os 20 partidos](imagens/assembleia-20.png)
-
-![Intenções de voto com 20 legendas](imagens/eleitorado-20.png)
-
-Conferência nativa: 20 opções de escolha, Assembleia com 513/81, 20 partidos nos 17 grupos do eleitorado e nenhum erro de execução.
+![20 opções de partido](imagens/escolha-20.png)

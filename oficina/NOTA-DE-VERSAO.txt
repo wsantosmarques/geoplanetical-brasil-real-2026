@@ -1,0 +1,1 @@
+0.7.0 experimental: 47 identidades históricas e 42 retratos reais via complemento 0.3.0 (Geoplanetical 1.0.7). Direções nacionais e Câmara com fontes/filiações. Mod oficial acrescenta retrato de Lula. Cinco fotos pendentes; Interior fictício. Novas identidades exigem nova campanha; saves existentes não são migrados.
