@@ -9,7 +9,7 @@
 - [x] MeB Mods: vetor/PNG e assinatura discreta na capa.
 - [x] README com galeria compacta e documentação detalhada separada.
 - [x] Defender local: pacotes 0.7 e 0.8 sem ameaça detectada nas análises registradas.
-- [ ] Resultado do scanner manual no GitHub Actions.
+- [x] Scanner manual no GitHub Actions: passou, nenhuma ameaça detectada na 0.8; arquivos e hashes conferidos, sem executar o instalador.
 - [x] Conteúdo 0.8 validado no aplicativo isolado: 47 registros, 45 fotos e 20 partidos.
 - [ ] Execução do instalador 0.8: comando de self-test bloqueado por revisão automática; arquivo compilado e inspecionado, sem execução nesta rodada.
 - [ ] Aceite do Wander e campanha longa com as identidades atuais.

@@ -2,6 +2,8 @@
 
 **Corte: 1º de janeiro de 2026.** A pesquisa reúne 38 postos: 32 pastas/órgãos, incluindo a CGU, mais seis postos com status de ministro. Este inventário não foi instalado como gabinete funcional. O complemento atual continua com cinco pastas abstratas, quatro titulares reais e Interior fictício.
 
+[Conferência com o guia oficial de mods e console](wiki-oficial.md).
+
 ## O limite é do motor
 
 | Camada | Comportamento encontrado na 1.0.7 | Mudança necessária |

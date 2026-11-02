@@ -2,6 +2,7 @@
 
 Os arquivos distribuídos têm SHA-256 publicado em cada release. A análise local com Microsoft Defender é registrada por versão, incluindo nomes, hashes, mecanismo, assinaturas e resultado.
 
+- [Verificação no GitHub Actions da 0.8.0](github-actions-0.8.0.json): passou, nenhuma ameaça detectada; [execução auditável](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41373376571).
 - [Análise local da 0.8.0](defender-0.8.0.json): nenhuma ameaça detectada nessa verificação.
 - [Análise local da 0.7.0](defender-0.7.0.json): nenhuma ameaça detectada nessa verificação.
 - [Execução manual no GitHub Actions](../.github/workflows/antivirus.yml): baixa os arquivos da release, confere hashes e analisa sem executar o instalador. Só roda quando acionada; não há agendamento ou envio automático a serviços externos de amostras.

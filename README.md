@@ -1,10 +1,10 @@
 # Brasil Real 2026 · MeB Mods
 
-<p align="center"><img src="imagens/marca/meb-mods.svg" width="150" alt="MeB Mods"><br><img src="imagens/capa-meb.png" width="260" alt="Capa Brasil Real 2026"></p>
+<p align="center"><img src="imagens/marca/meb-mods-selo.svg" width="150" alt="MeB Mods"><br><img src="imagens/capa-meb.png" width="260" alt="Capa Brasil Real 2026"></p>
 
 **Brasil em 1º de janeiro de 2026:** 20 partidos, 47 identidades históricas e 45 fotografias reais em campanhas novas. Versão **0.8.0 experimental**, integração **0.3.1** para Windows / Geoplanetical **1.0.7 estudado**.
 
-[**Baixar instalador único (.exe)**](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/download/v0.8.0-experimental/BrasilReal2026-Instalador-0.8.0.exe) · [Releases e SHA-256](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases) · [Verificações antivírus](seguranca/README.md)
+[**Baixar instalador único (.exe)**](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/download/v0.8.0-experimental/BrasilReal2026-Instalador-0.8.0.exe) · [Releases e SHA-256](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases) · [Verificações antivírus](seguranca/README.md) · [Antivírus no GitHub: passou](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41373376571)
 
 ## Veja no jogo
 
@@ -55,7 +55,7 @@ A criação da prévia privada na Steam foi recusada com **access denied**; não
 
 ## Fontes, créditos e documentação
 
-[Cadastro das pessoas](fontes/identidades/pessoas-2026.json) · [Créditos das fotografias](fontes/identidades/CREDITOS.md) · [Ministérios](docs/ministerios.md) · [MeB Mods](docs/marca.md) · [Pendências](CHECKLIST.md) · [Versões](VERSOES.md)
+[Cadastro das pessoas](fontes/identidades/pessoas-2026.json) · [Créditos das fotografias](fontes/identidades/CREDITOS.md) · [Ministérios](docs/ministerios.md) · [MeB Mods](docs/marca.md) · [Guia oficial de mods](docs/wiki-oficial.md) · [Pendências](CHECKLIST.md) · [Versões](VERSOES.md)
 
 Fotografias mantêm suas licenças e autoria; a presença não indica apoio ao projeto. A capa é arte criada com IA. O código calcula o patch a partir da instalação local e não redistribui o executável ou o ASAR original do jogo.
 
