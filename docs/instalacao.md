@@ -6,7 +6,7 @@ Feche o jogo, abra o instalador, confira a pasta e use **Instalar / atualizar**.
 
 ## Antivírus e SmartScreen
 
-[Defender no GitHub: passou](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41376713955). [Relatórios e SHA-256](../seguranca/README.md). Os hashes do EXE e ZIP foram conferidos com os arquivos da release. Essas análises não são certificação ou garantia absoluta.
+[Defender no GitHub: passou](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41378808053). [Relatórios e SHA-256](../seguranca/README.md). Os hashes do EXE e ZIP foram conferidos com os arquivos da release. Essas análises não são certificação ou garantia absoluta.
 
 O EXE não possui assinatura digital. O aviso de download pouco conhecido/fornecedor desconhecido do Edge pode aparecer por reputação insuficiente. Isso é diferente de uma detecção de malware. Não desative o antivírus; confirme a origem da release e o SHA-256 antes de decidir executar. Uma detecção nominal de ameaça deve ser investigada separadamente.
 

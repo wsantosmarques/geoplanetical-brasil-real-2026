@@ -18,7 +18,7 @@
 
 **Instalar a Full é simples:** baixe o EXE no GitHub, feche o jogo e clique em **Instalar / atualizar**. Dispensa Python e gerenciador instalado no Windows.
 
-**Antivírus 0.8.2:** análise local sem ameaça detectada; resultados e hashes em [seguranca](seguranca/README.md).
+**Antivírus 0.8.2:** Defender local e [GitHub Actions passaram](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41378808053), sem ameaça detectada. [Relatórios e hashes](seguranca/README.md).
 
 **Antivírus e integridade:** [resultados por versão, relatórios Defender e hashes SHA-256](seguranca/README.md). O EXE não tem assinatura digital: Edge/SmartScreen pode avisar sobre reputação insuficiente e fornecedor desconhecido. As análises não são certificação ou garantia absoluta.
 

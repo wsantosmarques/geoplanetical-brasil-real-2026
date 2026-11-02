@@ -15,5 +15,7 @@
   "frozenInstaller082Executed": false,
   "manualRealInstallationPending": true,
   "releasePromotionPending": true,
-  "steamPublished": false
+  "steamPublished": false,
+  "githubAntivirus": "no_threats_detected",
+  "githubScan": "https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41378808053"
 }

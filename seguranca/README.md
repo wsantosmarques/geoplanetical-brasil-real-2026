@@ -2,6 +2,7 @@
 
 Os arquivos distribuídos têm SHA-256 publicado em cada release. A análise local com Microsoft Defender é registrada por versão, incluindo nomes, hashes, mecanismo, assinaturas e resultado.
 
+- [Verificação no GitHub Actions da 0.8.2](github-actions-0.8.2.json): passou, nenhuma ameaça detectada; [execução auditável](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41378808053).
 - [Análise local da 0.8.2](defender-0.8.2.json): nenhuma ameaça detectada; hashes do novo EXE/ZIP registrados.
 - [Verificação no GitHub Actions da 0.8.1](github-actions-0.8.1.json): passou, nenhuma ameaça detectada; [execução auditável](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41376713955). A primeira tentativa não chegou a analisar, por indisponibilidade do Defender no runner.
 - [Análise local da 0.8.1](defender-0.8.1.json): nenhuma ameaça detectada; hashes do novo EXE/ZIP registrados.
