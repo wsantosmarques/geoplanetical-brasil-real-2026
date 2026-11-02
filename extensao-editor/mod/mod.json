@@ -1,11 +1,12 @@
 {
   "id": "brasil-real-2026",
-  "version": "0.7.0",
+  "version": "0.8.0",
   "contentApi": 1,
   "tier": "presentation",
   "name": "Brasil Real 2026 - Partidos, Congresso e lideranças",
-  "description": "Brasil em 01/01/2026 · experimental 0.7.0. Este mod de apresentação, no formato oficial, fornece nomes e siglas de 20 partidos, o nome de Lula e seu retrato. PARA TER OS 20 PARTIDOS NA SIMULAÇÃO E AS LIDERANÇAS: instale o complemento Brasil Real 0.3.0 (Windows, Geoplanetical 1.0.7 estudado), disponível no GitHub. Ele cria campanhas novas com 47 identidades históricas e 42 fotos reais; mostra presidências nacionais e líderes na Câmara em Política > Personalidades. Cinco fotos ainda pendentes: Antonio Rueda, Paula Coradi, Marcus Vinícius Ferreira, Iaraci Dias e Eduardo Ribeiro. A Oficina sozinha não cria partidos ou ministros. O complemento não converte partidas antigas; comece uma campanha nova para usar as identidades. Interior continua fictício, pois o motor tem apenas cinco pastas abstratas. Atributos e decisões são simulação, não avaliação factual das pessoas. Foto de Lula: Ricardo Stuckert/PR, CC BY 2.0, via Wikimedia Commons (foto oficial de 2023). Créditos individuais, fontes e instalação: https://github.com/wsantosmarques/geoplanetical-brasil-real-2026",
+  "description": "Brasil em 01/01/2026 · experimental 0.8.0, por MeB Mods. Este mod de apresentação fornece nomes/siglas dos partidos, nome e foto de Lula. Para os 20 partidos na simulação e as 47 identidades históricas com 45 fotografias, instale o complemento 0.3.1 para Windows/Geoplanetical 1.0.7 estudado pelo GitHub. Comece uma campanha nova. Presidências nacionais, lideranças na Câmara e fontes em Política > Personalidades. Fotos de Iaraci Dias e Marcus Vinícius Ferreira vêm do acervo eleitoral 2022 do TSE; Paula Coradi vem da Câmara. Permanecem pendentes os retratos reutilizáveis de Antonio Rueda e Eduardo Ribeiro. O motor tem cinco pastas abstratas; Interior permanece fictício. Os demais ministérios reais estão documentados em estudo, ainda sem simulação própria. Atributos e decisões são simulação, não avaliação biográfica. Saves existentes não são convertidos. Foto de Lula: Ricardo Stuckert/PR, CC BY 2.0, via Commons. Capa ilustrativa criada com IA; retratos são fotografias reais. Pacotes, fontes, créditos, verificação antivírus e instruções: https://github.com/wsantosmarques/geoplanetical-brasil-real-2026",
   "authors": [
+    "MeB Mods",
     "Wander"
   ],
   "provides": {
@@ -100,5 +101,5 @@
       "leader:076": "images/lula-2023.jpg"
     }
   },
-  "thumbnail": "images/capa-brasil-real-2026.png"
+  "thumbnail": "images/capa-brasil-real-meb.png"
 }

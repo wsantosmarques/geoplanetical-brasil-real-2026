@@ -1,0 +1,22 @@
+{
+  "scannedAt": "2026-11-01T22:16:04-03:00",
+  "engine": "Microsoft Defender Antivirus",
+  "signatureVersion": "1.463.76.0",
+  "signatureUpdatedAt": "2026-11-01T07:28:52-03:00",
+  "scope": "Pacote público 0.7.0, análise personalizada recursiva sem remediação",
+  "exitCode": 0,
+  "result": "Nenhuma ameaça detectada nesta verificação",
+  "files": [
+    {
+      "file": "BrasilReal2026-Instalador-0.7.0.exe",
+      "sha256": "92751ab7553064342693a17c1da9deb21502675e0606ff41dd930bb0de9b5a51",
+      "bytes": 23094282
+    },
+    {
+      "file": "Brasil_Real_2026_Mod_Oficina_0.7.0.zip",
+      "sha256": "00bef1f894fb50b8e83bee487f6c191b212df80d81afd39bb9798d2d509cc55e",
+      "bytes": 2820363
+    }
+  ],
+  "limits": "Uma análise antivírus não garante ausência de vulnerabilidades ou de ameaças futuras. O instalador não tem assinatura digital."
+}

@@ -1,0 +1,12 @@
+{
+  "version": "0.8.0",
+  "stage": "CreateItem",
+  "visibilityRequested": "private",
+  "confirmedItemId": null,
+  "confirmedWorkshopLink": false,
+  "result": "access denied",
+  "causeConfirmed": false,
+  "automaticRetryBlocked": true,
+  "legalAgreementAccepted": false,
+  "userSavesTouched": false
+}

@@ -5,7 +5,7 @@ from tkinter import ttk,filedialog,messagebox
 from instalar_extensao import operation_lock,_install,_restore,check_closed,sha,write_json
 from construir import identify
 HERE=pathlib.Path(getattr(sys,'_MEIPASS',pathlib.Path(__file__).resolve().parent))
-VERSION='0.7.0'
+VERSION='0.8.0'
 def steam_games():
     roots=[]
     try:
@@ -69,7 +69,7 @@ def perform(action,game):
                 archive=pathlib.Path(os.environ['LOCALAPPDATA'])/'BrasilRealEditor/stale-receipts';archive.mkdir(parents=True,exist_ok=True)
                 shutil.copy2(state,archive/(receipt.get('operationId','anterior')+'.json'));state.unlink()
                 _install(game,HERE/'catalogo-brasil-2026.json');game_changed=True
-            elif receipt.get('extensionVersion')!='0.3.0':
+            elif receipt.get('extensionVersion')!='0.3.1':
                 # Atualizacao usa o backup original; se falhar a nova instalacao, permanece o jogo original.
                 identify(pathlib.Path(receipt['backup']))
                 print('Restaurando a extensao anterior...',flush=True);_restore(game);_install(game,HERE/'catalogo-brasil-2026.json');game_changed=True
@@ -79,14 +79,14 @@ def perform(action,game):
         except Exception:
             if game_changed:_restore(game)
             raise
-        return 'Concluído. Abra Novo jogo e escolha Brasil para os 20 partidos, 47 identidades e 42 fotos. Consulte Política > Personalidades para ver fontes e lideranças. As campanhas existentes foram preservadas e não recebem as novas identidades.'
+        return 'Concluído. Abra Novo jogo e escolha Brasil para os 20 partidos, 47 identidades e 45 fotos. Consulte Política > Personalidades para ver fontes e lideranças. As campanhas existentes foram preservadas e não recebem as novas identidades.'
 class App:
     def __init__(self,root):
         self.root=root;root.title('Brasil Real 2026 | Instalador '+VERSION);root.geometry('730x470');root.minsize(650,430);self.busy=False;self.events=queue.Queue()
         style=ttk.Style();style.theme_use('vista');style.configure('Title.TLabel',font=('Segoe UI',20,'bold'));style.configure('TLabel',font=('Segoe UI',10));style.configure('TButton',font=('Segoe UI',10),padding=8)
         body=ttk.Frame(root,padding=24);body.pack(fill='both',expand=True)
         ttk.Label(body,text='Brasil Real 2026',style='Title.TLabel').pack(anchor='w')
-        ttk.Label(body,text='20 partidos, 47 identidades históricas e 42 fotos reais em campanhas novas.',wraplength=650).pack(anchor='w',pady=(4,14))
+        ttk.Label(body,text='20 partidos, 47 identidades históricas e 45 fotos reais em campanhas novas.',wraplength=650).pack(anchor='w',pady=(4,14))
         ttk.Label(body,text='Pasta do Geoplanetical').pack(anchor='w');row=ttk.Frame(body);row.pack(fill='x',pady=5)
         found=steam_games();self.path=tk.StringVar(value=str(found[0]) if found else '')
         ttk.Entry(row,textvariable=self.path).pack(side='left',fill='x',expand=True);self.browse=ttk.Button(row,text='Procurar',command=self.choose);self.browse.pack(side='left',padx=(8,0))

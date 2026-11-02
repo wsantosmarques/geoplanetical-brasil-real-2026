@@ -41,7 +41,7 @@ def _install(game,catalog):
     version=identify(game)
     stage=pathlib.Path(tempfile.mkdtemp(prefix='brasil-real-editor-stage-',dir=game))
     backup=pathlib.Path(os.environ['LOCALAPPDATA'])/'BrasilRealEditor'/'backups'/datetime.datetime.now().strftime('%Y%m%d-%H%M%S-%f');backup.mkdir(parents=True)
-    receipt={'operationId':uuid.uuid4().hex,'extensionVersion':'0.3.0','gameVersion':version,'game':str(game),'backup':str(backup),'staging':str(stage),'state':'preparing','files':{}}
+    receipt={'operationId':uuid.uuid4().hex,'extensionVersion':'0.3.1','gameVersion':version,'game':str(game),'backup':str(backup),'staging':str(stage),'state':'preparing','files':{}}
     changed=[];journal=False;safe_cleanup=True
     try:
         print('Construindo pacote visual e recalculando integridade...',flush=True);receipt['construction']=build(game,stage,catalog)

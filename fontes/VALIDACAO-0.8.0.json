@@ -1,0 +1,40 @@
+{
+  "version": "0.8.0",
+  "integrationVersion": "0.3.1",
+  "gameVersion": "1.0.7",
+  "nativeTest": {
+    "passed": true,
+    "setupParties": 20,
+    "historicalPeople": 47,
+    "historicalPhotos": 45,
+    "nativePhotos": 45,
+    "voterLegendCounts": [
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20,
+      20
+    ],
+    "errors": []
+  },
+  "scope": "Tres fotos novas e apresentacao; motor politico sem alteracoes adicionais desde a 0.7.",
+  "ministerialExpansionImplemented": false,
+  "pendingPhotos": [
+    "Antonio Rueda",
+    "Eduardo Ribeiro"
+  ],
+  "frozenInstallerExecuted": false,
+  "installerExecutionNote": "Comando combinado de self-test rejeitado por revisao automatica; executavel compilado, sem execucao nesta rodada."
+}

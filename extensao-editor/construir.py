@@ -78,7 +78,7 @@ def build(game,out,catalog_file):
     start=matches[0].start();end=app.index('function ',start+10);old=app[start:end]
     if old.count('return t.sort(')!=1:raise ValueError('Ordenacao de catalogo mudou')
     app=app[:start]+old.replace('return t.sort(','if(Array.isArray(window.__BRASIL_EDITOR_CATALOG__)){t=t.filter(q=>q.countryKey!=="076");t.push(...window.__BRASIL_EDITOR_CATALOG__);}return t.sort(')+app[end:]
-    prefix='/* Brasil Real 0.3.0: novos jogos e editor. Nao migra saves existentes. */\nwindow.__BRASIL_REAL_EDITOR__={version:"0.3.0",gameVersion:'+json.dumps(version)+',newGames:true};window.__BRASIL_EDITOR_CATALOG__='+json.dumps(catalog,ensure_ascii=False,separators=(',',':'))+';\n'
+    prefix='/* Brasil Real 0.3.1: novos jogos e editor. Nao migra saves existentes. */\nwindow.__BRASIL_REAL_EDITOR__={version:"0.3.1",gameVersion:'+json.dumps(version)+',newGames:true};window.__BRASIL_EDITOR_CATALOG__='+json.dumps(catalog,ensure_ascii=False,separators=(',',':'))+';\n'
     app,new_worker=patch_people(app,new_worker,catalog_file.parent,version)
     app=prefix+app
     locale=json.loads(locale_bytes)
@@ -88,5 +88,5 @@ def build(game,out,catalog_file):
     changed={'renderer/app.bundle.js':app.encode(),'renderer/simulation-worker.bundle.js':new_worker.encode(),'renderer/locales/pt-BR.json':json.dumps(locale,ensure_ascii=False,separators=(',',':')).encode()}
     built=ar.append_replacements(out/'resources/app.asar',changed);exe=update_exe_integrity(game/'Geoplanetical.exe',out/'Geoplanetical.exe',ar.header_hash,built.header_hash)
     if exe['originalExeSha256']!=allowed['exe']:raise ValueError('Executavel mudou durante a construcao')
-    result={'version':'0.3.0','gameVersion':version,'originalHeaderSha256':ar.header_hash,'patchedHeaderSha256':built.header_hash,'newGamePresetPartyIds':[p['id'] for p in seed['preset']['parties']],'replacedFiles':list(changed),'fileHashes':{k:digest(v) for k,v in changed.items()},'existingSavesMigrated':False,**exe}
+    result={'version':'0.3.1','gameVersion':version,'originalHeaderSha256':ar.header_hash,'patchedHeaderSha256':built.header_hash,'newGamePresetPartyIds':[p['id'] for p in seed['preset']['parties']],'replacedFiles':list(changed),'fileHashes':{k:digest(v) for k,v in changed.items()},'existingSavesMigrated':False,**exe}
     (out/'construcao.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf8');return result

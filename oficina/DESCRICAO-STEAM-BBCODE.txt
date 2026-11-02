@@ -1,26 +1,17 @@
-[h1]Brasil Real 2026 | 0.7 experimental[/h1]
-Brasil com referência em 1º de janeiro de 2026.
+[h1]Brasil Real 2026 | MeB Mods | 0.8.0 experimental[/h1]
 
-[h2]Duas formas de usar[/h2]
-[b]Só este mod da Oficina:[/b] nomes e siglas dos partidos disponíveis, nome e foto de Lula. O formato oficial não cria partidos ou os demais personagens.
+Brasil com referência em 1º de janeiro de 2026. A versão completa tem 20 partidos, 47 identidades históricas e 45 fotos reais, incluindo Paula Coradi, Iaraci Dias e Marcus Vinícius Ferreira.
 
-[b]Versão completa com instalador:[/b] 20 partidos desde Novo jogo, Câmara/Senado com 513/81, 47 identidades históricas, 42 fotos reais e quadro de fontes em Política → Personalidades. Windows / versão 1.0.7 estudada. Feche o jogo, execute o EXE e clique Instalar / atualizar.
-[url=https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.7.0-experimental]Baixar complemento completo e ler instruções[/url]
+A Oficina sozinha fornece o mod de apresentação: nomes/siglas e nome/foto de Lula. Para receber todos os partidos e dirigentes na simulação, use o instalador completo no GitHub e comece uma campanha nova. A Oficina não instala o EXE.
 
-[b]IMPORTANTE: comece uma campanha nova após instalar o complemento.[/b] Campanhas anteriores, inclusive da 0.6, não são convertidas. O cenário antigo também não recebe essas identidades. Seus arquivos de save são preservados.
+Presidências nacionais e lideranças na Câmara são mostradas separadamente. Federações compartilham referências sem duplicar pessoas. REDE possui dois co-porta-vozes; PCdoB distingue a presidência em exercício de Nádia Campeão e Luciana Santos licenciada.
 
-[h2]Direções partidárias e governo[/h2]
-Presidências nacionais e lideranças na Câmara são mostradas separadamente. REDE tem dois co-porta-vozes; PCdoB distingue Nádia Campeão e Luciana Santos. Lideranças compartilhadas de federações não duplicam pessoas nem alteram sua filiação.
+O motor tem cinco pastas ministeriais abstratas. Fazenda, Defesa, Relações Exteriores e Justiça recebem Haddad, José Múcio, Mauro Vieira e Lewandowski. Interior continua fictício. Os 38 postos ministeriais brasileiros foram pesquisados e documentados; não são 38 cargos funcionais implementados no jogo. O primeiro protótipo recomendado é Educação.
 
-Ministros compatíveis com as pastas nativas: Fernando Haddad, José Múcio Monteiro, Mauro Vieira e Ricardo Lewandowski. O motor só tem cinco pastas abstratas; Interior permanece fictício e não criamos todos os ministérios reais.
+Faltam retratos reutilizáveis confirmados de Antonio Rueda e Eduardo Ribeiro. Os nomes aparecem com Foto pendente. Apoio, atributos e comportamento incluem calibração de jogo; o cenário não prevê a história posterior a janeiro de 2026.
 
-[h2]O que ainda falta[/h2]
-Cinco retratos aguardam fonte reutilizável confirmada: Antonio Rueda, Paula Coradi, Marcus Vinícius Ferreira, Iaraci Dias e Eduardo Ribeiro. Eles aparecem com nome, cargo histórico e “Foto pendente”. Outros personagens auxiliares do jogo ainda podem ser genéricos.
+O Defender analisou os pacotes 0.7 e 0.8 sem detectar ameaças nessas verificações. Relatórios e SHA-256 estão no GitHub. Isso não é certificação ou garantia absoluta de segurança. O EXE ainda não possui assinatura digital e não foi executado nesta rodada após bloqueio automático do comando combinado de teste. O teste desktop isolado do conteúdo da 0.8 passou.
 
-Apoio, atributos e comportamento incluem calibrações de jogo. O quadro histórico documenta o início de 2026; acontecimentos posteriores seguem a simulação. Não é reprodução integral do sistema político brasileiro.
+Créditos individuais e licenças das fotos constam na documentação. Foto de Lula: Ricardo Stuckert/PR, CC BY 2.0, via Commons. Capa ilustrativa criada com IA. MeB Mods é uma iniciativa independente, sem vínculo com partidos ou com o desenvolvedor.
 
-[h2]Imagens e fontes[/h2]
-Os retratos de políticos são fotografias reais. A capa foi criada com IA. Foto de Lula: Ricardo Stuckert/PR, CC BY 2.0, via Wikimedia Commons. Créditos individuais, licenças, fontes e capturas no repositório:
-[url=https://github.com/wsantosmarques/geoplanetical-brasil-real-2026]Documentação e imagens da versão completa[/url]
-
-Projeto experimental independente, sem vínculo com partidos ou com o desenvolvedor do jogo.
+[url=https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.8.0-experimental]Instalador, fontes e relatórios[/url]

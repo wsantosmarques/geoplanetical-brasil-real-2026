@@ -1,5 +1,5 @@
 {
-  "version": "0.7.0",
+  "version": "0.8.0",
   "referenceDate": "2026-01-01",
   "people": [
     {
@@ -893,7 +893,19 @@
         "precision": 11,
         "source": "https://www.wikidata.org/wiki/Q10325547"
       },
-      "photoStatus": "pending"
+      "photoStatus": "ready",
+      "photo": {
+        "file": "fotos/marcus-vinicius-de-vasconcelos-ferreira.jpg",
+        "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_RJ_div.zip#FRJ190001603065_div.jpg",
+        "source": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022/resource/9479ab46-dba2-40c6-889b-43bd64b2a1bb",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "author": "Tribunal Superior Eleitoral — Dados Abertos, foto de candidatura fornecida pelo candidato",
+        "credit": "Tribunal Superior Eleitoral — Dados Abertos, foto de candidatura fornecida pelo candidato",
+        "date": "2022",
+        "sha256": "bc19b20daea6cce4d4c8fd07caf76e04fd47f0e5d87f68dd7253ef4fe348a513",
+        "changes": "Arquivo original obtido da fonte pública, sem edição local; enquadramento apenas por CSS no jogo."
+      }
     },
     {
       "key": "fred-costa",
@@ -939,7 +951,19 @@
         "https://psol50.org.br/votepsol/2025/09/25/artigo-de-paula-coradi-presidenta-do-psol-blindagem-e-anistia-o-congresso-contra-o-brasil/"
       ],
       "birth": null,
-      "photoStatus": "pending"
+      "photoStatus": "ready",
+      "photo": {
+        "file": "fotos/paula-coradi.jpg",
+        "url": "https://www.camara.leg.br/internet/bancoimagem/banco/2024/03/img20240326145531744PEQ.jpg",
+        "source": "https://www.camara.leg.br/banco-imagens/eventos/624460E4-27C9-44BF-84F9-84A151F4421F",
+        "license": "CC BY",
+        "licenseUrl": "https://www2.camara.leg.br/a-camara/documentos-e-pesquisa/arquivo/acervo-por-tipo/fotos",
+        "author": "Bruna Menezes/Câmara dos Deputados",
+        "credit": "Bruna Menezes/Câmara dos Deputados",
+        "date": "2024-03-26",
+        "sha256": "51509edad85d0a146fedd419a5aea4d55732383ec2efe8952691f48610d86c4b",
+        "changes": "Arquivo original obtido da fonte pública, sem edição local; enquadramento apenas por CSS no jogo."
+      }
     },
     {
       "key": "taliria-petrone",
@@ -1017,7 +1041,19 @@
         "https://vicongressonacionaldarede.com.br/congresso-da-rede-define-paulo-lamac-e-iaraci-dias-como-porta-vozes/"
       ],
       "birth": null,
-      "photoStatus": "pending"
+      "photoStatus": "ready",
+      "photo": {
+        "file": "fotos/iaraci-dias.jpg",
+        "url": "https://cdn.tse.jus.br/estatistica/sead/eleicoes/eleicoes2022/fotos/foto_cand2022_BA_div.zip#FBA50001600599_div.jpg",
+        "source": "https://dadosabertos.tse.jus.br/dataset/candidatos-2022/resource/842d29ea-c0f4-477f-846b-b9be07cd67a9",
+        "license": "CC BY 4.0",
+        "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+        "author": "Tribunal Superior Eleitoral — Dados Abertos, foto de candidatura fornecida pela candidata",
+        "credit": "Tribunal Superior Eleitoral — Dados Abertos, foto de candidatura fornecida pela candidata",
+        "date": "2022",
+        "sha256": "8ff69092568b2a17a85b64b664567fe47794e2e96ee866ceccd311dd18150caa",
+        "changes": "Arquivo original obtido da fonte pública, sem edição local; enquadramento apenas por CSS no jogo."
+      }
     },
     {
       "key": "nadia-campeao",

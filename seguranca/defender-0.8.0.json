@@ -1,0 +1,24 @@
+{
+  "version": "0.8.0",
+  "scannedAt": "2026-11-01T22:27:38-03:00",
+  "engine": "Microsoft Defender Antivirus",
+  "signatureVersion": "1.463.76.0",
+  "scope": "Pacote público 0.8.0, análise personalizada recursiva, proteção padrão ativa",
+  "exitCode": 0,
+  "result": "Nenhuma ameaça detectada nesta verificação",
+  "files": [
+    {
+      "file": "BrasilReal2026-Instalador-0.8.0.exe",
+      "sha256": "aabb285f879be88ae357e95bc696e331d02877f2f77d832e8a79ab7a812c55b7",
+      "bytes": 25378472
+    },
+    {
+      "file": "Brasil_Real_2026_Mod_Oficina_0.8.0.zip",
+      "sha256": "167fcf1198452d18371d016d9dd151de160b430fac5d79baa827ecd7baef0567",
+      "bytes": 5059256
+    }
+  ],
+  "frozenInstallerExecuted": false,
+  "archiveInspected": true,
+  "limits": "Resultado pontual; não garante ausência de ameaças ou vulnerabilidades. Instalador sem assinatura digital."
+}

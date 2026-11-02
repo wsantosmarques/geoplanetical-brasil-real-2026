@@ -1,0 +1,400 @@
+{
+  "referenceDate": "2026-01-01",
+  "method": "Lista nominal da Mensagem ao Congresso 2025, atualizada pelas nomeações até 31/12/2025. Nomes públicos de uso. Não equivale a 38 ministérios autônomos.",
+  "baseSource": "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf",
+  "posts": [
+    {
+      "office": "Agricultura e Pecuária",
+      "holder": "Carlos Fávaro",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Cidades",
+      "holder": "Jader Filho",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Ciência, Tecnologia e Inovação",
+      "holder": "Luciana Santos",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Comunicações",
+      "holder": "Frederico de Siqueira Filho",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf",
+        "https://www.gov.br/mcom/pt-br/acesso-a-informacao/perguntas-frequentes/o-ministerio-das-comunicacoes/quem-e-o-ministro-das"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Cultura",
+      "holder": "Margareth Menezes",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Defesa",
+      "holder": "José Múcio Monteiro",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Desenvolvimento Agrário e Agricultura Familiar",
+      "holder": "Paulo Teixeira",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Desenvolvimento e Assistência Social, Família e Combate à Fome",
+      "holder": "Wellington Dias",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Desenvolvimento, Indústria, Comércio e Serviços",
+      "holder": "Geraldo Alckmin",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Direitos Humanos e da Cidadania",
+      "holder": "Macaé Evaristo",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf",
+        "https://www.gov.br/mdh/pt-br/assuntos/noticias/2024/setembro/macae-evaristo-e-nomeada-ministra-dos-direitos-humanos-e-da-cidadania"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Educação",
+      "holder": "Camilo Santana",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Empreendedorismo, da Microempresa e da Empresa de Pequeno Porte",
+      "holder": "Márcio França",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Esporte",
+      "holder": "André Fufuca",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Fazenda",
+      "holder": "Fernando Haddad",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Gestão e Inovação em Serviços Públicos",
+      "holder": "Esther Dweck",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Igualdade Racial",
+      "holder": "Anielle Franco",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Integração e Desenvolvimento Regional",
+      "holder": "Waldez Góes",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Justiça e Segurança Pública",
+      "holder": "Ricardo Lewandowski",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Meio Ambiente e Mudança do Clima",
+      "holder": "Marina Silva",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Minas e Energia",
+      "holder": "Alexandre Silveira",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Mulheres",
+      "holder": "Márcia Lopes",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf",
+        "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=05%2F05%2F2025&jornal=605&pagina=1"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Pesca e Aquicultura",
+      "holder": "André de Paula",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Planejamento e Orçamento",
+      "holder": "Simone Tebet",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Portos e Aeroportos",
+      "holder": "Silvio Costa Filho",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Povos Indígenas",
+      "holder": "Sonia Guajajara",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Previdência Social",
+      "holder": "Wolney Queiroz",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf",
+        "https://www.gov.br/previc/pt-br/acesso-a-informacao-1/acordos-de-cooperacao-tecnica/44011-003070-2025-22.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Relações Exteriores",
+      "holder": "Mauro Vieira",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Saúde",
+      "holder": "Alexandre Padilha",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf",
+        "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=10%2F03%2F2025&jornal=604&pagina=1"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Trabalho e Emprego",
+      "holder": "Luiz Marinho",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Transportes",
+      "holder": "Renan Filho",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Turismo",
+      "holder": "Gustavo Feliciano",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf",
+        "https://www.gov.br/turismo/pt-br/composicao/gabinete-do-ministro/gustavo-costa-feliciano"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Controladoria-Geral da União",
+      "holder": "Vinícius Marques de Carvalho",
+      "kind": "pasta_incluindo_cgu",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Casa Civil",
+      "holder": "Rui Costa",
+      "kind": "status_ministerial",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Secretaria-Geral da Presidência",
+      "holder": "Guilherme Boulos",
+      "kind": "status_ministerial",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf",
+        "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=21%2F10%2F2025&jornal=529&pagina=1"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Secretaria de Relações Institucionais",
+      "holder": "Gleisi Hoffmann",
+      "kind": "status_ministerial",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf",
+        "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=10%2F03%2F2025&jornal=604&pagina=1"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Secretaria de Comunicação Social",
+      "holder": "Sidônio Palmeira",
+      "kind": "status_ministerial",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf",
+        "https://pesquisa.in.gov.br/imprensa/servlet/INPDFViewer?captchafield=firstAccess&data=15%2F01%2F2025&jornal=529&pagina=1"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Gabinete de Segurança Institucional",
+      "holder": "Marcos Antonio Amaro dos Santos",
+      "kind": "status_ministerial",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    },
+    {
+      "office": "Advocacia-Geral da União",
+      "holder": "Jorge Messias",
+      "kind": "status_ministerial",
+      "referenceDate": "2026-01-01",
+      "sources": [
+        "https://www.gov.br/casacivil/pt-br/assuntos/noticias/mensagem_pdf/mcn-2025-digital-v1.pdf"
+      ],
+      "implementedAsFunctionalPortfolio": false
+    }
+  ],
+  "count": 38,
+  "inGameNativePortfolios": 5,
+  "realNativeIdentitiesBound": 4,
+  "status": "inventario_de_pesquisa_nao_instalado_no_motor"
+}

@@ -1,0 +1,30 @@
+name: Verificar pacotes com Microsoft Defender
+on:
+  workflow_dispatch:
+    inputs:
+      release_tag:
+        description: Tag experimental publicada
+        required: true
+        default: v0.8.0-experimental
+permissions:
+  contents: read
+jobs:
+  antivirus:
+    runs-on: windows-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5
+      - name: Baixar, conferir SHA-256 e analisar sem executar o instalador
+        shell: pwsh
+        env:
+          GH_TOKEN: ${{ github.token }}
+          RELEASE_TAG: ${{ inputs.release_tag }}
+          RELEASE_REPOSITORY: ${{ github.repository }}
+        run: ./seguranca/verificar-release.ps1 -Tag $env:RELEASE_TAG -Repository $env:RELEASE_REPOSITORY
+      - name: Guardar relatório e log da verificação
+        if: always()
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7.0.2
+        with:
+          name: antivirus-${{ inputs.release_tag }}
+          path: seguranca/resultado-ci/
+          retention-days: 90
