@@ -1,5 +1,7 @@
 """Entrada do executavel unico do Brasil Real. Sem Python externo."""
 import pathlib,os,sys,json,threading,queue,traceback,datetime,contextlib,shutil,argparse,winreg
+import time
+from progresso import ProgressLog
 import tkinter as tk
 from tkinter import ttk,filedialog,messagebox
 from instalar_extensao import operation_lock,_install,_restore,check_closed,sha,write_json
@@ -59,9 +61,11 @@ def perform(action,game):
     with operation_lock(game):
         state=game/'brasil-real-editor-installed.json'
         if action=='restore':_restore(game);return 'Arquivos do jogo restaurados. Seus mods e suas partidas foram preservados.'
+        print('Preparando nomes, imagens e configuração do mod...',flush=True)
         plan=prepare_names();game_changed=False
         if state.exists():
             receipt=json.loads(state.read_text(encoding='utf8'))
+            print('Conferindo a integridade da integração instalada...',flush=True)
             matches=all(sha(game/name)==info['installedSha256'] for name,info in receipt['files'].items())
             if not matches:
                 # Steam substituiu o patch: so aceitar uma versao ORIGINAL explicitamente conferida.
@@ -71,6 +75,7 @@ def perform(action,game):
                 _install(game,HERE/'catalogo-brasil-2026.json');game_changed=True
             elif receipt.get('extensionVersion')!='0.3.1':
                 # Atualizacao usa o backup original; se falhar a nova instalacao, permanece o jogo original.
+                print('Conferindo o backup original para atualizar a integração...',flush=True)
                 identify(pathlib.Path(receipt['backup']))
                 print('Restaurando a extensao anterior...',flush=True);_restore(game);_install(game,HERE/'catalogo-brasil-2026.json');game_changed=True
         else:_install(game,HERE/'catalogo-brasil-2026.json');game_changed=True
@@ -82,7 +87,7 @@ def perform(action,game):
         return 'Concluído. Abra Novo jogo e escolha Brasil para os 20 partidos, 47 identidades e 45 fotos. Consulte Política > Personalidades para ver fontes e lideranças. As campanhas existentes foram preservadas e não recebem as novas identidades.'
 class App:
     def __init__(self,root):
-        self.root=root;root.title('Brasil Real 2026 | Instalador '+VERSION);root.geometry('730x470');root.minsize(650,430);self.busy=False;self.events=queue.Queue()
+        self.root=root;root.title('Brasil Real 2026 | Instalador '+VERSION);root.geometry('730x510');root.minsize(650,430);self.busy=False;self.events=queue.Queue()
         style=ttk.Style();style.theme_use('vista');style.configure('Title.TLabel',font=('Segoe UI',20,'bold'));style.configure('TLabel',font=('Segoe UI',10));style.configure('TButton',font=('Segoe UI',10),padding=8)
         body=ttk.Frame(root,padding=24);body.pack(fill='both',expand=True)
         ttk.Label(body,text='Brasil Real 2026',style='Title.TLabel').pack(anchor='w')
@@ -97,6 +102,8 @@ class App:
         self.bar=ttk.Progressbar(body,mode='indeterminate');self.bar.pack(fill='x',pady=10)
         self.status=tk.StringVar(value='Pronto para instalar. Compatível com a versão 1.0.7 estudada.')
         ttk.Label(body,textvariable=self.status,wraplength=650).pack(anchor='w')
+        self.elapsed=tk.StringVar(value='')
+        ttk.Label(body,textvariable=self.elapsed).pack(anchor='w',pady=(6,0))
         root.protocol('WM_DELETE_WINDOW',self.close);root.after(150,self.poll)
     def choose(self):
         value=filedialog.askdirectory(title='Selecione a pasta que contém Geoplanetical.exe')
@@ -108,22 +115,34 @@ class App:
         if self.busy:return
         game=pathlib.Path(self.path.get())
         if not (game/'Geoplanetical.exe').is_file():messagebox.showerror('Pasta não encontrada','Selecione a pasta que contém Geoplanetical.exe.');return
-        self.busy=True;self.install.state(['disabled']);self.restore.state(['disabled']);self.browse.state(['disabled']);self.bar.start(15);self.status.set('Conferindo arquivos, criando backups e aplicando alterações. Aguarde...')
+        self.started=time.monotonic();self.busy=True;self.install.state(['disabled']);self.restore.state(['disabled']);self.browse.state(['disabled']);self.bar.start(15);self.status.set('Conferindo arquivos, criando backups e aplicando alterações. Aguarde...')
         threading.Thread(target=self.run,args=(action,game),daemon=True).start()
     def run(self,action,game):
         logs=pathlib.Path(os.environ['LOCALAPPDATA'])/'BrasilRealEditor/logs';logs.mkdir(parents=True,exist_ok=True);log=logs/('instalador-'+datetime.datetime.now().strftime('%Y%m%d-%H%M%S')+'.log')
         try:
-            with log.open('w',encoding='utf8') as file,contextlib.redirect_stdout(file),contextlib.redirect_stderr(file):
-                try:msg=perform(action,game)
-                except Exception:traceback.print_exc();raise
-            self.events.put((True,msg))
-        except Exception as e:self.events.put((False,str(e)+'\nRegistro: '+str(log)))
+            with log.open('w',encoding='utf8',buffering=1) as file:
+                stream=ProgressLog(file,lambda line:self.events.put(('progress',line)))
+                with contextlib.redirect_stdout(stream),contextlib.redirect_stderr(stream):
+                    try:msg=perform(action,game)
+                    except Exception:traceback.print_exc();raise
+            self.events.put(('done',True,msg))
+        except Exception as e:self.events.put(('done',False,str(e)+'\nRegistro: '+str(log)))
     def poll(self):
         try:
-            ok,msg=self.events.get_nowait();self.busy=False;self.bar.stop();self.install.state(['!disabled']);self.restore.state(['!disabled']);self.browse.state(['!disabled']);self.status.set(msg)
-            if not ok:messagebox.showerror('Não foi possível concluir',msg)
+            while True:
+                event=self.events.get_nowait()
+                if event[0]=='progress':
+                    self.status.set(event[1])
+                    continue
+                _,ok,msg=event
+                self.busy=False;self.bar.stop();self.install.state(['!disabled']);self.restore.state(['!disabled']);self.browse.state(['!disabled']);self.status.set(msg)
+                if not ok:messagebox.showerror('Não foi possível concluir',msg)
         except queue.Empty:pass
+        if hasattr(self,'started'):
+            seconds=int(time.monotonic()-self.started)
+            self.elapsed.set(('Em andamento' if self.busy else 'Tempo decorrido')+f': {seconds//60:02d}:{seconds%60:02d}. '+('A etapa atual aparece acima; arquivos grandes podem levar alguns minutos.' if self.busy else ''))
         self.root.after(150,self.poll)
+
 def main():
     p=argparse.ArgumentParser();p.add_argument('--self-test',action='store_true');p.add_argument('--result',type=pathlib.Path);args=p.parse_args()
     root=tk.Tk()

@@ -19,3 +19,6 @@
 - [ ] Item privado Steam: tentativa recusada com access denied; sem item/link confirmado.
 - [x] Prévia local da página e descrição preparadas.
 - [ ] Publicação pública na Oficina.
+
+- [x] Progresso detalhado no código-fonte: etapa, log imediato e cronômetro, com teste de eventos sem executar o instalador.
+- [ ] Empacotar essa melhoria numa próxima versão do EXE; a 0.8.0 publicada mantém a interface anterior.

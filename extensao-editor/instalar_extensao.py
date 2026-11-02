@@ -46,12 +46,15 @@ def _install(game,catalog):
     try:
         print('Construindo pacote visual e recalculando integridade...',flush=True);receipt['construction']=build(game,stage,catalog)
         for name in NAMES:
-            p=game/name;h=sha(p);dest=backup/name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,dest)
+            print('Verificando original: '+name,flush=True)
+            p=game/name;h=sha(p);dest=backup/name;dest.parent.mkdir(parents=True,exist_ok=True)
+            print('Criando backup: '+name+' (a cópia e a conferência podem levar alguns minutos)',flush=True);shutil.copy2(p,dest)
             if sha(dest)!=h or sha(p)!=h:raise RuntimeError('Origem mudou durante backup: '+name)
             receipt['files'][name]={'originalSha256':h,'installedSha256':sha(stage/name)}
         write_json(backup/'receipt.json',receipt);check_closed(game)
         for name in NAMES:
             if sha(game/name)!=receipt['files'][name]['originalSha256']:raise RuntimeError('Instalacao mudou antes da substituicao: '+name)
+        print('Aplicando a nova integração e verificando os arquivos finais...',flush=True)
         receipt['state']='installing';write_json(state,receipt);journal=True
         for name in NAMES:os.replace(stage/name,game/name);changed.append(name)
         for name in NAMES:
@@ -79,18 +82,21 @@ def _restore(game):
     if pathlib.Path(receipt['game']).resolve()!=game or set(receipt['files'])!=set(NAMES):raise RuntimeError('Recibo invalido ou pertence a outra instalacao')
     start={}
     for name,info in receipt['files'].items():
+        print('Conferindo arquivo instalado e backup: '+name,flush=True)
         start[name]=sha(game/name)
         if start[name] not in {info['originalSha256'],info['installedSha256']}:raise RuntimeError('Arquivo alterado por outra origem/Steam. Restauracao automatica recusada: '+name)
         if sha(backup/name)!=info['originalSha256']:raise RuntimeError('Backup nao confere: '+name)
     stage=pathlib.Path(tempfile.mkdtemp(prefix='brasil-real-editor-restore-',dir=game));changed=[];safe_cleanup=True;previous_state=receipt['state']
     try:
         for name in NAMES:
+            print('Preparando restauração segura: '+name+' (cópia do original e da versão atual)',flush=True)
             dest=stage/name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(backup/name,dest)
             rollback=stage/'rollback'/name;rollback.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(game/name,rollback)
             if sha(rollback)!=start[name] or sha(dest)!=receipt['files'][name]['originalSha256']:raise RuntimeError('Copias de restauracao divergentes')
         check_closed(game)
         for name in NAMES:
             if sha(game/name)!=start[name]:raise RuntimeError('Arquivo mudou antes de restaurar: '+name)
+        print('Aplicando os arquivos originais e conferindo a restauração...',flush=True)
         receipt['state']='restoring';receipt['restoreStaging']=str(stage);write_json(state,receipt)
         for name in NAMES:os.replace(stage/name,game/name);changed.append(name)
         for name in NAMES:

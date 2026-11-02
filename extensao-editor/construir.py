@@ -86,7 +86,9 @@ def build(game,out,catalog_file):
         if value=='Jogo base':locale[key]='Referência Brasil Real (novos jogos)'
         if value=='Estúdio de mods':locale[key]='Estúdio de mods · Brasil Real 0.3'
     changed={'renderer/app.bundle.js':app.encode(),'renderer/simulation-worker.bundle.js':new_worker.encode(),'renderer/locales/pt-BR.json':json.dumps(locale,ensure_ascii=False,separators=(',',':')).encode()}
+    print('Montando o pacote do jogo (cerca de 4 GB). Aguarde a cópia...',flush=True)
     built=ar.append_replacements(out/'resources/app.asar',changed);exe=update_exe_integrity(game/'Geoplanetical.exe',out/'Geoplanetical.exe',ar.header_hash,built.header_hash)
+    print('Pacote construído; integridade do executável conferida.',flush=True)
     if exe['originalExeSha256']!=allowed['exe']:raise ValueError('Executavel mudou durante a construcao')
     result={'version':'0.3.1','gameVersion':version,'originalHeaderSha256':ar.header_hash,'patchedHeaderSha256':built.header_hash,'newGamePresetPartyIds':[p['id'] for p in seed['preset']['parties']],'replacedFiles':list(changed),'fileHashes':{k:digest(v) for k,v in changed.items()},'existingSavesMigrated':False,**exe}
     (out/'construcao.json').write_text(json.dumps(result,ensure_ascii=False,indent=2),encoding='utf8');return result
