@@ -1,1 +1,8 @@
-0.8.0 experimental: 45 fotografias reais, três recuperadas em Câmara/TSE; assinatura MeB Mods e galeria reorganizada; estudo de 38 postos ministeriais, ainda sem ampliar a simulação. Dois retratos pendentes. Pacotes analisados pelo Defender, hashes e limites documentados.
+0.8.2 | primeira versão pública
+
+- Steam: nomes/siglas e nome/foto de Lula nos alvos existentes.
+- Full: instalador simples no GitHub, com 20 partidos, 47 identidades e 45 fotos em campanhas novas.
+- Corrigida a validação de registros incompletos; atualização manual concluída, com nove saves preservados.
+- Instalador MeB Mods com etapas e progresso por arquivo.
+- EXE/ZIP do GitHub analisados pelo Defender local e GitHub; relatórios e SHA-256 públicos.
+- Duas fotos e ministérios adicionais ainda pendentes, conforme descrição.
