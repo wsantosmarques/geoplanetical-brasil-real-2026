@@ -1,5 +1,10 @@
 # Versões
 
+## 0.8.2: candidato para teste manual
+
+Corrige falso sucesso com registro incompleto reproduzido no EXE 0.8.1 em clone. Valida contexto do registro, hashes conhecidos e saída antes de aplicar. Dezesseis casos inválidos recusados antes do preparo do mod; testes de idempotência, restauração e rollback passaram em temporários. Registro real legítimo reconhecido em leitura. Instalação real da 0.8.2 aguardando teste do usuário; promoção para release e Steam pendentes.
+
+
 ## 0.8.1 experimental: instalador e apresentação
 
 Interface escura/dourada, capa e MeB Mods. Etapas, progresso por bytes, velocidade, cronômetro e registro imediato. Transações de I/O e rollback testados em temporários. Dados políticos 0.8.0 e integração 0.3.1 mantidos. EXE compilado e inspecionado, sem execução automática. Não implementa atualização automática.

@@ -1,10 +1,45 @@
 """Instalador local reversivel; nao le ou escreve conteudo de partidas."""
-import pathlib,json,os,shutil,datetime,hashlib,argparse,subprocess,tempfile,contextlib,msvcrt,uuid
+import pathlib,json,os,shutil,datetime,hashlib,argparse,subprocess,tempfile,contextlib,msvcrt,uuid,re
 from asar_local import Asar
 from progresso import file_sha,copy_file
 from construir import build,EXPECTED_HEADER,EXPECTED_EXE,identify
 HERE=pathlib.Path(__file__).resolve().parent
 NAMES=('resources/app.asar','Geoplanetical.exe')
+INTEGRATION_VERSION='0.3.1'
+ORIGINAL_HASHES={
+    'resources/app.asar':'eb19415e652989dbea87d0578b0deea120a3734a51d803de268b9dd500fe3f74',
+    'Geoplanetical.exe':'d445eb1d3d6c19251c4f533eebb64e7a9655c2ab9535f0338f3c50f4d17042de',
+}
+CURRENT_HASHES={
+    'resources/app.asar':'7540712bc75f84b66303d67841e06797503939758ada792d595656a9bba7cdbe',
+    'Geoplanetical.exe':'732b2bb242fb4c9cfdd8f7efa7c4e54f42094d81ee9e8d4e470622012a2eb396',
+}
+
+def load_receipt(game,restoring=False):
+    """Recusar registro incompleto antes de preparar mod ou alterar o jogo."""
+    try:
+        receipt=json.loads((game/'brasil-real-editor-installed.json').read_text(encoding='utf8'))
+        if not isinstance(receipt,dict):raise ValueError('objeto ausente')
+        if not re.fullmatch(r'[a-f0-9]{32}',receipt.get('operationId','')):raise ValueError('operação inválida')
+        if receipt.get('gameVersion')!='1.0.7':raise ValueError('versão do jogo inválida')
+        if not re.fullmatch(r'\d+\.\d+\.\d+',receipt.get('extensionVersion','')):raise ValueError('versão da integração inválida')
+        states={'installed','installing','restoring','recovery-required'} if restoring else {'installed'}
+        if receipt.get('state') not in states:raise ValueError('operação anterior incompleta')
+        recorded=pathlib.Path(receipt['game']);backup=pathlib.Path(receipt['backup'])
+        if not recorded.is_absolute() or recorded.resolve()!=game.resolve():raise ValueError('outra instalação')
+        if not backup.is_absolute() or backup.resolve()==game.resolve():raise ValueError('backup inválido')
+        files=receipt.get('files')
+        if not isinstance(files,dict) or set(files)!=set(NAMES):raise ValueError('lista de arquivos incompleta')
+        for name in NAMES:
+            info=files[name]
+            if not isinstance(info,dict):raise ValueError('arquivo inválido')
+            for key in ('originalSha256','installedSha256'):
+                if not isinstance(info.get(key),str) or not re.fullmatch(r'[a-f0-9]{64}',info[key]):raise ValueError('hash inválido')
+            if info['originalSha256']!=ORIGINAL_HASHES[name]:raise ValueError('original não reconhecido')
+            if receipt['extensionVersion']==INTEGRATION_VERSION and info['installedSha256']!=CURRENT_HASHES[name]:raise ValueError('integração não reconhecida')
+        return receipt
+    except (OSError,ValueError,TypeError,KeyError) as error:
+        raise RuntimeError('Registro de instalação inválido ou incompleto. A operação foi recusada antes de alterar o jogo ou o mod. Preserve os backups para recuperação.') from error
 def sha(p):
     return file_sha(p)
 def write_json(p,data):
@@ -42,7 +77,7 @@ def _install(game,catalog):
     version=identify(game)
     stage=pathlib.Path(tempfile.mkdtemp(prefix='brasil-real-editor-stage-',dir=game))
     backup=pathlib.Path(os.environ['LOCALAPPDATA'])/'BrasilRealEditor'/'backups'/datetime.datetime.now().strftime('%Y%m%d-%H%M%S-%f');backup.mkdir(parents=True);backup=backup.resolve(strict=True)
-    receipt={'operationId':uuid.uuid4().hex,'extensionVersion':'0.3.1','gameVersion':version,'game':str(game),'backup':str(backup),'staging':str(stage),'state':'preparing','files':{}}
+    receipt={'operationId':uuid.uuid4().hex,'extensionVersion':INTEGRATION_VERSION,'gameVersion':version,'game':str(game),'backup':str(backup),'staging':str(stage),'state':'preparing','files':{}}
     changed=[];journal=False;safe_cleanup=True
     try:
         print('Construindo pacote visual e recalculando integridade...',flush=True);receipt['construction']=build(game,stage,catalog)
@@ -52,6 +87,8 @@ def _install(game,catalog):
             print('Criando backup: '+name+' (a cópia e a conferência podem levar alguns minutos)',flush=True);copy_file(p,dest)
             if sha(dest)!=h or sha(p)!=h:raise RuntimeError('Origem mudou durante backup: '+name)
             receipt['files'][name]={'originalSha256':h,'installedSha256':sha(stage/name)}
+            if h!=ORIGINAL_HASHES[name] or receipt['files'][name]['installedSha256']!=CURRENT_HASHES[name]:
+                raise RuntimeError('Os arquivos construídos não correspondem à integração estudada. A aplicação foi recusada.')
         write_json(backup/'receipt.json',receipt);check_closed(game)
         for name in NAMES:
             if sha(game/name)!=receipt['files'][name]['originalSha256']:raise RuntimeError('Instalacao mudou antes da substituicao: '+name)
@@ -79,8 +116,7 @@ def restore(game):
     game=game.resolve(strict=True)
     with operation_lock(game):return _restore(game)
 def _restore(game):
-    check_closed(game);state=game/'brasil-real-editor-installed.json';receipt=json.loads(state.read_text(encoding='utf8'));backup=pathlib.Path(receipt['backup'])
-    if pathlib.Path(receipt['game']).resolve()!=game or set(receipt['files'])!=set(NAMES):raise RuntimeError('Recibo invalido ou pertence a outra instalacao')
+    check_closed(game);state=game/'brasil-real-editor-installed.json';receipt=load_receipt(game,restoring=True);backup=pathlib.Path(receipt['backup'])
     start={}
     for name,info in receipt['files'].items():
         print('Conferindo arquivo instalado e backup: '+name,flush=True)

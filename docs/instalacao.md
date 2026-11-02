@@ -1,6 +1,6 @@
 # Instalação Full e aviso de download
 
-Baixe **BrasilReal2026-Instalador-0.8.1.exe** na [release 0.8.1](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.8.1-experimental). O ZIP é apenas o mod de apresentação no formato da Oficina.
+Baixe **BrasilReal2026-Instalador-0.8.2.exe** na [pré-release 0.8.2](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.8.2-experimental). O ZIP é apenas o mod de apresentação no formato da Oficina.
 
 Feche o jogo, abra o instalador, confira a pasta e use **Instalar / atualizar**. Depois, abra **Novo jogo > Brasil**. A integração não converte suas partidas atuais.
 
@@ -35,3 +35,9 @@ Se você já instalou a Full 0.8.0, a integração continua a mesma 0.3.1. Não 
 No menu principal do jogo, abra **Estúdio de mods > Brasil Real 2026**. O nome, a versão, a apresentação e a miniatura ficam nessa tela; mais abaixo existe **Publicar na Oficina Steam**. A descrição preparada distingue Steam e Full e destaca o antivírus.
 
 A [prévia local](previa-oficina.html) pode ser aberta no navegador depois de baixar os arquivos do repositório. Ainda não há link de item Steam confirmado. A página real da Oficina só existe após uma publicação bem-sucedida.
+
+## Correção da 0.8.2
+
+Registro incompleto/corrompido é recusado antes de preparar o mod. Caminho, estado, lista exata de arquivos e hashes são conferidos; a integração atual exige os hashes estudados. O registro legítimo da instalação atual foi reconhecido em leitura. A 0.8.1 reproduziu falso sucesso nesse caso negativo em clone e foi substituída.
+
+A 0.8.2 aguarda o teste manual do usuário na instalação real. Feche o jogo, abra o EXE novo e clique em **Instalar / atualizar**. Não apague recibos/backups para forçar a instalação se houver erro. Partidas existentes não são convertidas.

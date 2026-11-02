@@ -1,0 +1,19 @@
+{
+  "installerVersion": "0.8.2",
+  "integrationVersion": "0.3.1",
+  "historicalDatasetVersion": "0.8.0",
+  "fix": "reject invalid or incomplete receipt before preparing mod; validate exact files and known original/current hashes",
+  "invalidReceiptCasesRejected": 16,
+  "idempotentUpdateTestPassed": true,
+  "temporaryInstallRestoreRollbackPassed": true,
+  "realLegitimateReceiptReadOnlyRecognized": true,
+  "compiledFixedReaderInspected": true,
+  "reviewerFoundBlockingIssues": false,
+  "mainGameProtectedFilesVerified": 18,
+  "mainGameProtectedFilesChanged": 0,
+  "includesMainGameAsar": true,
+  "frozenInstaller082Executed": false,
+  "manualRealInstallationPending": true,
+  "releasePromotionPending": true,
+  "steamPublished": false
+}

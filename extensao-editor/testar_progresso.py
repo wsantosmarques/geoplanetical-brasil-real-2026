@@ -39,7 +39,7 @@ with tempfile.TemporaryDirectory(prefix='meb-io-test-') as temp:
   (stage/'resources').mkdir(exist_ok=True)
   for name,data in originals.items():(stage/name).write_bytes(data+b' PATCH')
   return {'fakeBuildForTransactionTest':True}
- with patch.dict(os.environ,{'LOCALAPPDATA':str(root/'local')}),patch.object(install,'check_closed'),patch.object(install,'identify',return_value='1.0.7'),patch.object(install,'build',side_effect=build):
+ with patch.dict(os.environ,{'LOCALAPPDATA':str(root/'local')}),patch.object(install,'ORIGINAL_HASHES',{n:hashlib.sha256(b).hexdigest() for n,b in originals.items()}),patch.object(install,'CURRENT_HASHES',{n:hashlib.sha256(b+b' PATCH').hexdigest() for n,b in originals.items()}),patch.object(install,'check_closed'),patch.object(install,'identify',return_value='1.0.7'),patch.object(install,'build',side_effect=build):
   receipt=install._install(game,catalog);assert receipt['state']=='installed'
   install._restore(game)
   assert all((game/name).read_bytes()==data for name,data in originals.items())

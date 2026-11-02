@@ -27,3 +27,9 @@
 
 - [x] Release 0.8.1 publicada e hashes dos arquivos conferidos; Defender local e GitHub passaram.
 - [ ] Execução do novo EXE 0.8.1 pelo usuário; interface nativa e transações em temporários validadas, EXE não executado automaticamente.
+
+- [x] EXE 0.8.1 executado no clone; teste negativo encontrou falso sucesso com registro incompleto.
+- [x] Correção 0.8.2 revisada: 16 registros inválidos recusados antes de preparar o mod, registro legítimo reconhecido.
+- [x] 18 arquivos reais protegidos, incluindo saves e ASAR, conferidos sem diferenças.
+- [ ] Usuário testar o EXE 0.8.2 na instalação real.
+- [ ] Promover pré-release após resultado desse teste; Steam continua sem publicação.

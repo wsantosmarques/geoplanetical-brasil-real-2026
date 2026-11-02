@@ -17,7 +17,11 @@
   "asarStreamingFixturePassed": true,
   "frozenArchiveInspected": true,
   "packagedPhotoCount": 45,
-  "frozenInstallerExecuted": false,
+  "frozenInstallerExecuted": true,
   "realGameChangedBy081": false,
-  "updaterImplemented": false
+  "updaterImplemented": false,
+  "frozenStartupSelfTestPassed": true,
+  "realExeNegativeTest": "failed: incomplete receipt falsely reported success without integration",
+  "normalInstallAndRestoreByFrozenExeValidated": false,
+  "supersededBy": "0.8.2"
 }

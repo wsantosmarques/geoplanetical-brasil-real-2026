@@ -4,10 +4,10 @@ import time
 from progresso import ProgressLog
 import tkinter as tk
 from tkinter import ttk,filedialog,messagebox
-from instalar_extensao import operation_lock,_install,_restore,check_closed,sha,write_json
+from instalar_extensao import operation_lock,_install,_restore,check_closed,sha,write_json,load_receipt,INTEGRATION_VERSION
 from construir import identify
 HERE=pathlib.Path(getattr(sys,'_MEIPASS',pathlib.Path(__file__).resolve().parent))
-VERSION='0.8.1'
+VERSION='0.8.2'
 def steam_games():
     roots=[]
     try:
@@ -61,19 +61,25 @@ def perform(action,game):
     with operation_lock(game):
         state=game/'brasil-real-editor-installed.json'
         if action=='restore':_restore(game);return 'Arquivos do jogo restaurados. Seus mods e suas partidas foram preservados.'
-        print('Preparando nomes, imagens e configuração do mod...',flush=True)
-        plan=prepare_names();game_changed=False
+        if action!='install':raise ValueError('Operação desconhecida')
+        receipt=None;matches=False
         if state.exists():
-            receipt=json.loads(state.read_text(encoding='utf8'))
+            receipt=load_receipt(game)
             print('Conferindo a integridade da integração instalada...',flush=True)
             matches=all(sha(game/name)==info['installedSha256'] for name,info in receipt['files'].items())
+            if not matches:identify(game)
+            elif receipt['extensionVersion']!=INTEGRATION_VERSION:identify(pathlib.Path(receipt['backup']))
+        else:identify(game)
+        print('Preparando nomes, imagens e configuração do mod...',flush=True)
+        plan=prepare_names();game_changed=False
+        if receipt is not None:
             if not matches:
                 # Steam substituiu o patch: so aceitar uma versao ORIGINAL explicitamente conferida.
                 identify(game)
                 archive=pathlib.Path(os.environ['LOCALAPPDATA'])/'BrasilRealEditor/stale-receipts';archive.mkdir(parents=True,exist_ok=True)
                 shutil.copy2(state,archive/(receipt.get('operationId','anterior')+'.json'));state.unlink()
                 _install(game,HERE/'catalogo-brasil-2026.json');game_changed=True
-            elif receipt.get('extensionVersion')!='0.3.1':
+            elif receipt['extensionVersion']!=INTEGRATION_VERSION:
                 # Atualizacao usa o backup original; se falhar a nova instalacao, permanece o jogo original.
                 print('Conferindo o backup original para atualizar a integração...',flush=True)
                 identify(pathlib.Path(receipt['backup']))

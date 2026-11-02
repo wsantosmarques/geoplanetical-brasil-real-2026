@@ -2,15 +2,15 @@
 
 <p align="center"><img src="imagens/marca/meb-mods-selo.svg" width="150" alt="MeB Mods"><br><img src="imagens/capa-meb.png" width="260" alt="Capa Brasil Real 2026"></p>
 
-**Brasil em 1º de janeiro de 2026:** 20 partidos, 47 identidades históricas e 45 fotografias reais em campanhas novas. Pacote **0.8.1 experimental**, integração **0.3.1** para Windows / Geoplanetical **1.0.7 estudado**.
+**Brasil em 1º de janeiro de 2026:** 20 partidos, 47 identidades históricas e 45 fotografias reais em campanhas novas. Pacote **0.8.2, candidato para teste manual**, integração **0.3.1** para Windows / Geoplanetical **1.0.7 estudado**.
 
-[**Baixar instalador único (.exe)**](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/download/v0.8.1-experimental/BrasilReal2026-Instalador-0.8.1.exe) · [Releases e SHA-256](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases) · [Verificações antivírus](seguranca/README.md)
+[**Baixar instalador único (.exe)**](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/download/v0.8.2-experimental/BrasilReal2026-Instalador-0.8.2.exe) · [Releases e SHA-256](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases) · [Verificações antivírus](seguranca/README.md)
 
 ## Qual versão escolher?
 
 | | Steam, somente Oficina | Full, instalador do GitHub |
 |---|---|---|
-| Instalação | Assinar, ativar e reiniciar | Baixar **BrasilReal2026-Instalador-0.8.1.exe**, fechar o jogo e instalar |
+| Instalação | Assinar, ativar e reiniciar | Baixar **BrasilReal2026-Instalador-0.8.2.exe**, fechar o jogo e instalar |
 | Nomes/siglas e nome/foto de Lula | Sim, nos alvos existentes | Sim |
 | 20 partidos na escolha inicial, Congresso, estúdio e eleitorado | Não | Sim, em campanha nova |
 | 47 identidades e 45 fotos | Não | Sim |
@@ -18,7 +18,7 @@
 
 **Instalar a Full é simples:** baixe o EXE no GitHub, feche o jogo e clique em **Instalar / atualizar**. Dispensa Python e gerenciador instalado no Windows.
 
-**Antivírus 0.8.1: Defender local e [GitHub Actions passaram](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41376713955), sem ameaça detectada.**
+**Antivírus 0.8.2:** análise local sem ameaça detectada; resultados e hashes em [seguranca](seguranca/README.md).
 
 **Antivírus e integridade:** [resultados por versão, relatórios Defender e hashes SHA-256](seguranca/README.md). O EXE não tem assinatura digital: Edge/SmartScreen pode avisar sobre reputação insuficiente e fornecedor desconhecido. As análises não são certificação ou garantia absoluta.
 
@@ -34,7 +34,7 @@ Capturas em perfil de teste separado. Clique para ampliar; as imagens ficam reun
 | **Instalador Full 0.8.1** | **Três novas fotografias** |
 | <a href="imagens/instalador-0.8.1.png"><img src="imagens/instalador-0.8.1.png" width="360" alt="Prévia nativa do instalador com capa MeB Mods"></a> | <a href="imagens/novas-fotos.png"><img src="imagens/novas-fotos.png" width="360" alt="Paula Coradi, Iaraci Dias e Marcus Vinícius Ferreira"></a> |
 
-A captura do instalador foi feita na interface nativa em modo de prévia, sem executar o EXE ou alterar o jogo. A 0.8.1 melhora instalação/progresso; os dados políticos continuam os da 0.8.0 e a integração é 0.3.1.
+A captura do instalador foi feita na interface nativa em modo de prévia, sem executar o EXE ou alterar o jogo. O visual mostrado é o da prévia 0.8.1, mantido na 0.8.2. A 0.8.2 corrige o falso sucesso com registro incompleto; dados políticos 0.8.0 e integração 0.3.1 mantidos. A instalação real será testada manualmente pelo usuário antes da promoção para release.
 
 [Ajuda para instalar e entender os avisos do Windows](docs/instalacao.md).
 
@@ -90,3 +90,5 @@ A 0.8 passou no teste desktop isolado com 45 fotos. O EXE compilado foi inspecio
 </details>
 
 **Atualizações futuras:** estudamos um botão de consulta às releases, sem serviço residente. Ainda não está implementado. [Opções e recomendação](docs/atualizacoes-futuras.md).
+
+**0.8.1 substituída:** o teste real no clone encontrou falso sucesso quando o registro de instalação estava incompleto. Use a 0.8.2. [O que foi corrigido e validado](docs/validacao-instalador-0.8.2.json). [Assinatura digital: opções e pendências](docs/assinatura-digital.md).
