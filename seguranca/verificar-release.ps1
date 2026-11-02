@@ -23,10 +23,13 @@ try {
     $report.files+=@{ file=$file.Name; bytes=$file.Length; sha256=$hash }
   }
   try { Update-MpSignature -ErrorAction Stop } catch { $report.signatureUpdateError=$_.Exception.Message }
-  $status=Get-MpComputerStatus
+  $status=Get-MpComputerStatus -ErrorAction Stop
+  if (-not $status -or -not $status.AntivirusEnabled -or -not $status.AntivirusSignatureVersion) {
+    $report.result='scanner_unavailable'
+    throw 'Defender indisponível ou sem assinaturas neste runner; análise não realizada'
+  }
   $report.signatureVersion=$status.AntivirusSignatureVersion
-  $report.signatureUpdatedAt=$status.AntivirusSignatureLastUpdated.ToUniversalTime().ToString('o')
-  if (-not $status.AntivirusEnabled) {throw 'Defender indisponível neste runner; análise não realizada'}
+  $report.signatureUpdatedAt=if ($status.AntivirusSignatureLastUpdated) { $status.AntivirusSignatureLastUpdated.ToUniversalTime().ToString('o') } else { $null }
   $candidate=Join-Path $env:ProgramData 'Microsoft\Windows Defender\Platform\CurrentVersion\MpCmdRun.exe'
   if (-not (Test-Path -LiteralPath $candidate)) {
     $candidate=Get-ChildItem (Join-Path $env:ProgramData 'Microsoft\Windows Defender\Platform') -Filter MpCmdRun.exe -Recurse -File | Sort-Object LastWriteTime -Descending | Select-Object -First 1 -ExpandProperty FullName

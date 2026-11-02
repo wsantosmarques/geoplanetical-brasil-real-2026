@@ -5,12 +5,12 @@ on:
       release_tag:
         description: Tag experimental publicada
         required: true
-        default: v0.8.0-experimental
+        default: v0.8.1-experimental
 permissions:
   contents: read
 jobs:
   antivirus:
-    runs-on: windows-latest
+    runs-on: windows-2022
     timeout-minutes: 15
     steps:
       - uses: actions/checkout@fbc6f3992d24b796d5a048ff273f7fcc4a7b6c09 # v5

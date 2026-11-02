@@ -29,7 +29,6 @@ Capturas em perfil de teste separado. Clique para ampliar; as imagens ficam reun
 | <a href="imagens/escolha-20.png"><img src="imagens/escolha-20.png" width="360" alt="Seleção dos 20 partidos"></a> | <a href="imagens/liderancas-2026.png"><img src="imagens/liderancas-2026.png" width="360" alt="Lideranças com fotografias e fontes"></a> |
 | **Ministros nas telas nativas** | **Intenções de voto** |
 | <a href="imagens/ministros-2026.png"><img src="imagens/ministros-2026.png" width="360" alt="Ministros e vice-presidente"></a> | <a href="imagens/eleitorado-20.png"><img src="imagens/eleitorado-20.png" width="360" alt="20 legendas no eleitorado"></a> |
-
 | **Instalador Full 0.8.1** | **Três novas fotografias** |
 | <a href="imagens/instalador-0.8.1.png"><img src="imagens/instalador-0.8.1.png" width="360" alt="Prévia nativa do instalador com capa MeB Mods"></a> | <a href="imagens/novas-fotos.png"><img src="imagens/novas-fotos.png" width="360" alt="Paula Coradi, Iaraci Dias e Marcus Vinícius Ferreira"></a> |
 
