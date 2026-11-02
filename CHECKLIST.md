@@ -13,8 +13,8 @@
 - [x] Instalação/restauração/rollback e idempotência validados em temporários; leitor corrigido inspecionado no EXE compilado.
 - [x] 18 arquivos reais protegidos, incluindo saves e ASAR, conferidos sem diferenças.
 - [x] Pré-release 0.8.2 publicada, arquivos/hashes conferidos; Defender local e GitHub sem ameaça detectada.
-- [ ] Usuário testar o EXE 0.8.2 na instalação real; instalação desse EXE não executada automaticamente.
-- [ ] Promover para release após resultado do teste manual.
+- [x] Usuário executou a atualização 0.8.2 na instalação real; hashes do jogo conferidos e nove saves iguais.
+- [x] Primeira release regular v0.8.2: mesmos bytes do candidato testado.
 - [ ] Campanha longa e aceite da fidelidade das identidades.
 - [x] Prévia local da Oficina preparada; envio privado anterior recusado com access denied, sem item confirmado.
 - [ ] Resolver criação do item Steam e publicar após revisão; Steam continua sem publicação.

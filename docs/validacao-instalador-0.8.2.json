@@ -12,10 +12,16 @@
   "mainGameProtectedFilesVerified": 18,
   "mainGameProtectedFilesChanged": 0,
   "includesMainGameAsar": true,
-  "frozenInstaller082Executed": false,
-  "manualRealInstallationPending": true,
-  "releasePromotionPending": true,
+  "frozenInstaller082Executed": true,
+  "manualRealInstallationPending": false,
+  "releasePromotionPending": false,
   "steamPublished": false,
   "githubAntivirus": "no_threats_detected",
-  "githubScan": "https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41378808053"
+  "githubScan": "https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41378808053",
+  "manualUpdateOnIntegration031Passed": true,
+  "manualFrozenExeFreshInstallTested": false,
+  "manualFrozenExeRestoreTested": false,
+  "existingSaveFilesCompared": 9,
+  "existingSaveFilesChanged": 0,
+  "regularRelease": "https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.8.2"
 }

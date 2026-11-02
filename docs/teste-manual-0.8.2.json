@@ -1,0 +1,11 @@
+{
+  "manualUpdate082Succeeded": true,
+  "installedModVersion": "0.8.2",
+  "integrationVersion": "0.3.1",
+  "installedGameFileHashesMatchKnownPayload": true,
+  "existingSaveFilesCompared": 9,
+  "existingSaveFilesChanged": 0,
+  "testScope": "manual update over an already installed integration 0.3.1; not a fresh install or restore of the frozen EXE",
+  "evidence": "user supplied screenshot showing Concluído in 00:04; local mod version and both game hashes verified read-only",
+  "steamPublished": false
+}

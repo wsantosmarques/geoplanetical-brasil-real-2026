@@ -1,8 +1,8 @@
 # Versões
 
-## 0.8.2: candidato para teste manual
+## 0.8.2: primeira release regular
 
-Corrige falso sucesso com registro incompleto reproduzido no EXE 0.8.1 em clone. Valida contexto do registro, hashes conhecidos e saída antes de aplicar. Dezesseis casos inválidos recusados antes do preparo do mod; testes de idempotência, restauração e rollback passaram em temporários. Registro real legítimo reconhecido em leitura. Instalação real da 0.8.2 aguardando teste do usuário; promoção para release e Steam pendentes.
+Corrige falso sucesso com registro incompleto reproduzido no EXE 0.8.1 em clone. Valida contexto do registro, hashes conhecidos e saída antes de aplicar. Dezesseis casos inválidos recusados antes do preparo do mod; testes de idempotência, restauração e rollback passaram em temporários. Registro real legítimo reconhecido em leitura. Atualização real executada pelo usuário sobre a integração 0.3.1; arquivos instalados e nove saves conferidos. Release regular v0.8.2 com os mesmos bytes do candidato. Steam permanece pendente.
 
 
 ## 0.8.1 experimental: instalador e apresentação
