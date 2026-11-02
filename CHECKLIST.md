@@ -24,3 +24,6 @@
 - [x] Interface e progresso real empacotados na 0.8.1; a 0.8.0 mantém a interface antiga.
 - [x] Captura nativa da prévia do instalador 0.8.1 incluída no README e na galeria preparada.
 - [ ] Consulta de atualizações pelo aplicativo: proposta documentada, ainda não implementada.
+
+- [x] Release 0.8.1 publicada e hashes dos arquivos conferidos; Defender local e GitHub passaram.
+- [ ] Execução do novo EXE 0.8.1 pelo usuário; interface nativa e transações em temporários validadas, EXE não executado automaticamente.

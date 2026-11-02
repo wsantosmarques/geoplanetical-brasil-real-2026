@@ -1,0 +1,26 @@
+{
+  "tag": "v0.8.1-experimental",
+  "repository": "wsantosmarques/geoplanetical-brasil-real-2026",
+  "engine": "Microsoft Defender Antivirus",
+  "files": [
+    {
+      "bytes": 5059696,
+      "file": "Brasil_Real_2026_Mod_Oficina_0.8.1.zip",
+      "sha256": "6dfebe1e4ad9685dab01d2369869dc5a85fe440b340e02908099c87af15bbbd4"
+    },
+    {
+      "bytes": 25407038,
+      "file": "BrasilReal2026-Instalador-0.8.1.exe",
+      "sha256": "a95b6b5d9447f67c34f79c0c2b28d184e22838b3d9584549e043d72ed4d24068"
+    }
+  ],
+  "result": "no_threats_detected",
+  "installerExecuted": false,
+  "signatureVersion": "1.463.80.0",
+  "signatureUpdatedAt": "2026-11-01T16:17:24.0000000Z",
+  "exitCode": 0,
+  "limits": "Resultado desta análise, sem garantia absoluta de segurança; não substitui revisão e atualização.",
+  "finishedAt": "2026-11-02T02:16:23.6196140Z",
+  "workflowRun": "https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41376713955",
+  "previousUnavailableRunnerAttempt": "https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41376526008"
+}
