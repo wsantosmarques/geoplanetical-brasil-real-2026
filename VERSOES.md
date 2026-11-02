@@ -1,7 +1,4 @@
-# Versões experimentais
+# Versões
 
-- Mod/cenário 0.5.1: primeira distribuição pública de teste, apresentação revisada e aviso explícito sobre Novo jogo.
-- Extensão 0.1.0: catálogo visual de 20 partidos para Windows/Geoplanetical 1.0.6, com instalador e restauração separados.
-- Base política do cenário: experimental 0.4. As mudanças desta distribuição não alteram sua simulação.
-
-Cada nova versão deve declarar os arquivos compatíveis, limites, testes e hashes dos downloads. Releases de teste são marcadas como pré-lançamento.
+- 0.6.0: instalador único, integração 0.2.0, 20 partidos em Novo jogo e na simulação, eleitorado completo, suporte conferido a 1.0.6/1.0.7.
+- 0.5.1: mod de apresentação e cenário separado; extensão 0.1.0 só para o estúdio. Preservada como release anterior.

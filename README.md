@@ -1,81 +1,71 @@
-# Brasil Real 2026
+# Brasil Real 2026 | 0.6.0 experimental
 
-Prévia experimental do Brasil no início de 2026 para Geoplanetical. Mod **0.5.1** e extensão visual opcional **0.1.0**.
+![Capa](imagens/capa.png)
 
-![Capa do projeto](imagens/capa.png)
+[**Baixar o instalador único para Windows**](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/download/v0.6.0-experimental/BrasilReal2026-Instalador-0.6.0.exe)
 
-## Escolha seu pacote
+[Releases e versões anteriores](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases). A versão 0.5.1 era apenas mod + cenário e uma extensão visual; a 0.6.0 acrescenta campanhas novas com os 20 partidos.
 
-Baixe os ZIPs em [Releases](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases).
+## Instalação simples
 
-| Pacote | Conteúdo | Estúdio |
-|---|---|---|
-| Padrão | Mod de nomes e cenário complementar | Os partidos exclusivos do cenário podem aparecer como alvo desconhecido |
-| Com extensão | Mesmo conteúdo e instalador visual separado | 20 partidos com indicadores esquerda/direita |
+Execute `BrasilReal2026-Instalador-0.6.0.exe`, confira a pasta detectada e clique em **Instalar / atualizar**. Não é necessário instalar Python ou executar comandos. Feche o Geoplanetical antes da instalação. A janela também oferece **Restaurar jogo**.
 
-**Ativar o mod e clicar em Novo jogo não cria os 20 partidos.** Para essa estrutura, instale o cenário complementar e use **Carregar partida > Brasil_Real_2026_Experimental**. A extensão também não muda a criação de campanhas novas.
+O instalador configura o mod de nomes e instala a integração 0.2.0. Requer Windows e os arquivos exatos das versões 1.0.6 e 1.0.7 estudadas do jogo; versões diferentes são recusadas. Reserve cerca de 12 GB para cópia temporária e backups. O instalador ainda não possui assinatura digital.
 
-## Instalar o mod e o cenário
+## O que muda
 
-1. Extraia o ZIP em uma pasta temporária. Guarde uma cópia da sua campanha.
-2. Se você ainda não utiliza o item da Oficina, copie a pasta `mod-local-opcional/brasil-real-2026` para `%APPDATA%/Geoplanetical/mods`. Se já utiliza o item da Oficina, não instale uma segunda cópia local com o mesmo identificador.
-3. Copie `cenario/Brasil_Real_2026_Experimental.gsav` para `%APPDATA%/Geoplanetical/saves`. **Não sobrescreva uma partida existente:** se houver arquivo com o mesmo nome, preserve-o e escolha outro nome para a cópia importada.
-4. Habilite o mod em Gerenciar mods e reinicie o jogo. Carregue o cenário pelo menu Carregar partida. Grave seu teste com outro nome.
+- **Novo jogo, Brasil:** o preset passa de quatro blocos agregados para 20 partidos. A opção Liderar um partido oferece os 20, incluindo PT; Liderar o país continua disponível.
+- **Campanha nova:** a simulação nasce com os mesmos 20 IDs, ideologias, apoios e cores da escolha inicial. Câmara com 513 cadeiras; Senado com 81, incluindo uma cadeira independente.
+- **Governo inicial:** núcleo configurado com PT, PCdoB, PV e PSB. É uma aproximação mínima, não uma reprodução de todos os apoios, federações e ministérios.
+- **Eleitorado:** a distribuição exposta para cada grupo brasileiro mostra os 20 partidos, em vez de resumir apenas os três primeiros. Os cálculos já percorriam a lista completa de partidos. As larguras usam frações exatas; só os textos são arredondados.
+- **Estúdio:** os 20 partidos permanecem disponíveis com indicadores de esquerda/direita.
+- **Nomes:** mod de apresentação atualizado para 0.6.0, incluindo a apresentação do presidente como Luiz Inácio Lula da Silva. Retratos e muitos personagens auxiliares ainda são genéricos.
 
-O mod fornece nomes e siglas; o save fornece a estrutura política. Ao voltar a uma campanha antiga, desative o mod e reinicie se quiser manter seus nomes anteriores.
+## Partidas existentes
 
-## Instalar a extensão opcional
+**Uma campanha antiga com quatro partidos continua com quatro.** O instalador não abre, converte nem regrava saves. Para usar os 20, comece uma campanha nova depois de instalar, ou carregue o cenário complementar anteriormente distribuído. Uma campanha iniciada antes da integração não recebe os partidos retroativamente.
 
-Somente para **Windows e os arquivos exatos do Geoplanetical 1.0.6 estudados**. Não funciona em qualquer versão que tenha o mesmo número caso o conteúdo dos arquivos seja diferente. Requer **Python 3.11 ou superior**, espaço livre para cópia e backup completos do pacote do jogo (reserve cerca de 12 GB) e permissão para escrever na pasta da instalação. Não usa bibliotecas Python externas.
+O mod de nomes pode alterar a apresentação de nomes em campanhas antigas enquanto estiver ativo, sem regravar o conteúdo do save.
 
-Feche o jogo. No pacote Com extensão, abra um terminal na pasta `extensao-editor` e execute:
+## Backup e restauração
 
-```powershell
-python instalar_extensao.py instalar
-```
+Os arquivos originais do jogo são guardados em `%LOCALAPPDATA%/BrasilRealEditor/backups`. Metadados e configuração anteriores do mod ficam em `mod-backups` na mesma área. O instalador mantém um recibo na pasta do jogo e verifica hashes antes de instalar ou restaurar.
 
-Se o jogo estiver em outra biblioteca Steam, indique o caminho:
+**Restaurar jogo** recupera os arquivos do jogo e preserva os mods e saves. Atualizações da Steam ou verificação de arquivos podem remover a integração; ela só deve ser reinstalada depois de uma conferência de compatibilidade. Os fuses e a verificação de integridade do Electron continuam ativos.
 
-```powershell
-python instalar_extensao.py instalar --jogo "D:/SteamLibrary/steamapps/common/Geoplanetical"
-```
+Se ocorrer estado `recovery-required`, preserve a pasta temporária e o backup indicados no recibo. Uma gravação incompleta pode exigir recuperação manual. O instalador recusa substituir arquivos que tenham mudado por outra origem.
 
-O instalador mantém um backup completo em `%LOCALAPPDATA%/BrasilRealEditor/backups` e um recibo na pasta do jogo. O backup não deve ser apagado enquanto a extensão estiver instalada. Os fuses e a verificação de integridade permanecem habilitados; o hash do pacote modificado é atualizado no executável local. O motor da simulação e os saves não são editados.
+## Fidelidade
 
-Reabra o jogo e abra o mod no estúdio. A identificação **Brasil Real 0.1** aparece na interface em português, com os 20 indicadores. A lista tem paginação: use Mostrar mais para ver os restantes. As barrinhas são somente de leitura; mudar ideologia continua exigindo uma nova versão do cenário.
+Apoio inicial é uma calibração baseada em cadeiras, não pesquisa de intenção de voto. Ideologias, atributos e cores incluem aproximações. O motor mantém simplificações eleitorais, ministeriais e legislativas; este pacote não implementa integralmente o sistema brasileiro nem prevê resultados reais. Os partidos não equivalem a um cadastro individual completo de deputados e senadores.
 
-Para restaurar os arquivos originais, feche o jogo e execute:
+Fontes e histórico: https://github.com/wsantosmarques/geoplanetical-brasil-real-2026
 
-```powershell
-python instalar_extensao.py restaurar
-```
+Esta versão exige nova campanha para validar o comportamento completo. A publicação na Oficina Steam continua separada: assinar apenas o mod oficial não instala a integração.
 
-Use o mesmo `--jogo` se necessário. O restaurador recusa sobrescrever arquivos que tenham mudado por atualização da Steam ou outra origem. Atualizações/verificação pela Steam podem remover a extensão; não force a instalação em uma versão diferente.
 
-Se o recibo registrar `recovery-required`, preserve o backup e o staging indicado e procure assistência. A restauração automática pode recusar um arquivo parcialmente gravado que não corresponda a nenhum hash conhecido.
+## Fontes e imagens
 
-## Conteúdo e limites
+As fontes históricas e aproximações estão em `fontes`. O mod oficial está em `oficina`; assinar apenas esse mod não instala os novos presets. A capa foi criada com IA para o projeto. Retratos reais de políticos ainda não foram adicionados. O código calcula o patch a partir da instalação local e não redistribui o executável ou o ASAR original do jogo.
 
-- 20 partidos com nomes reais e parâmetros de jogo próprios.
-- Câmara com 513 cadeiras: reconstrução do DCD de 23/12/2025 e atualização de 29/12. O intervalo até 01/01 não foi auditado individualmente por completo.
-- Senado com 80 cadeiras vinculadas aos partidos e 1 independente, a partir de exercícios e filiações na data de referência.
-- Parte dos dirigentes e integrantes do governo tem nomes reais. Presidentes partidários são aproximados ao papel do motor e não equivalem necessariamente a líderes de bancada ou candidatos presidenciais.
-- Apoio inicial deriva da proporção de cadeiras. Não representa pesquisa de opinião. Ideologias, cores e atributos são calibrações editoriais, não avaliações científicas ou factuais de pessoas.
-- Retratos e personagens auxiliares continuam genéricos. Não há cadastro individual completo de 513 deputados e 81 senadores.
-- A coalizão do protótipo é um núcleo mínimo; não representa todos os apoios parlamentares, federações ou ministérios.
-- O motor mantém simplificações: posse no dia eleitoral, renovação do Senado sem alternância automática entre 2/3 e 1/3 e processo legislativo não convertido integralmente para o brasileiro.
-- O pacote não atualiza todo o restante do mundo nem prevê eleições reais.
+## Validação
 
-Fontes e campos aproximados: arquivos em `fontes`. O cenário preserva o conteúdo político da versão experimental 0.4.
+- Na 1.0.6: 20 partidos desde o bootstrap; controle de MDB e PT; 310 dias com eleições, recarga e totais de 513/81. Eleitorado com 20 partidos nos 17 grupos. Uma cópia de save antigo permaneceu com os quatro IDs originais.
+- Revisão final da coalizão: núcleo de PT, PCdoB, PV e PSB, avanço de 31 dias e recarga.
+- Na 1.0.7: bootstrap, controle de MDB e PT, coalizão, 31 dias e recarga.
+- Instalador único: execução do runtime embutido com Tk e arquivos de 20 partidos, sem depender de Python instalado.
 
-## Imagens e testes
+Esses testes não equivalem a validar todas as regras do processo político brasileiro.
 
-![Estúdio com a extensão](imagens/estudio-partidos.png)
 
-Captura do aplicativo desktop com extensão 0.1.0, em cópia isolada do jogo 1.0.6. Teste do editor: 20 indicadores, nenhum alvo desconhecido, capa carregada, inicialização concluída e nenhum erro de execução. O cenário também foi carregado no aplicativo desktop em perfil separado. Esses ensaios não substituem testes completos de jogabilidade na versão atual.
+## Capturas da integração na 1.0.7
 
-![Apresentação dos partidos](imagens/partidos-cenario.png)
+Capturas do aplicativo desktop em cópia isolada, com mod local. A campanha foi iniciada pelo Novo jogo, escolhendo MDB. Nenhuma campanha do usuário foi usada nas imagens.
 
-A imagem acima é um material editorial criado para a prévia 0.5.0, não uma captura do jogo. A capa foi criada com IA para este projeto. Nenhum retrato fotográfico real de político foi acrescentado nesta versão.
+![Escolha dos 20 partidos](imagens/escolha-20.png)
 
-As ferramentas deste repositório calculam o patch a partir da instalação local. O repositório não inclui o executável ou o pacote ASAR do jogo. O cenário é distribuído como partida complementar nos ZIPs da release. Projeto independente de Wander, sem vínculo com o desenvolvedor do jogo.
+![Câmara com os 20 partidos](imagens/assembleia-20.png)
+
+![Intenções de voto com 20 legendas](imagens/eleitorado-20.png)
+
+Conferência nativa: 20 opções de escolha, Assembleia com 513/81, 20 partidos nos 17 grupos do eleitorado e nenhum erro de execução.

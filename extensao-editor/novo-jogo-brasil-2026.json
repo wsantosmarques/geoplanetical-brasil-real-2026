@@ -1,0 +1,516 @@
+{
+  "preset": {
+    "archetype": "presidential-republic",
+    "rulingPartyId": "PT",
+    "coalition": [
+      "PT",
+      "PCdoB",
+      "PV",
+      "PSB"
+    ],
+    "leaderElection": {
+      "type": "presidential",
+      "termYears": 4,
+      "system": "two-round",
+      "defining": true,
+      "next": 2026
+    },
+    "chambers": [
+      {
+        "id": "cd",
+        "seats": 513,
+        "composition": {
+          "REPUBLICANOS": 44,
+          "MDB": 42,
+          "UNIAO": 59,
+          "PSD": 47,
+          "PP": 50,
+          "REDE": 4,
+          "PDT": 16,
+          "PCdoB": 9,
+          "PL": 87,
+          "PT": 67,
+          "CIDADANIA": 4,
+          "PODE": 16,
+          "PSB": 16,
+          "PRD": 5,
+          "PV": 4,
+          "SOLIDARIEDADE": 5,
+          "AVANTE": 8,
+          "PSDB": 14,
+          "PSOL": 11,
+          "NOVO": 5
+        },
+        "method": "pr",
+        "termYears": 4,
+        "next": 2026
+      }
+    ],
+    "parties": [
+      {
+        "id": "PT",
+        "ideology": {
+          "econ": -0.6,
+          "social": -0.35,
+          "gov": -0.15,
+          "nat": -0.15
+        },
+        "support": 0.13060428849902533,
+        "family": "socialist",
+        "cohesion": 0.9,
+        "color": "#cc0000",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 1.306,
+          "activistsK": 26.121,
+          "influence": 31.53,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "PL",
+        "ideology": {
+          "econ": 0.5,
+          "social": 0.7,
+          "gov": 0.35,
+          "nat": 0.6
+        },
+        "support": 0.1695906432748538,
+        "family": "nationalist",
+        "cohesion": 0.9,
+        "color": "#173a70",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 1.696,
+          "activistsK": 33.918,
+          "influence": 33.48,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "MDB",
+        "ideology": {
+          "econ": 0.2,
+          "social": 0.1,
+          "gov": 0,
+          "nat": 0.05
+        },
+        "support": 0.08187134502923976,
+        "family": "catchall",
+        "cohesion": 0.9,
+        "color": "#129447",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.819,
+          "activistsK": 16.374,
+          "influence": 29.094,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "PSD",
+        "ideology": {
+          "econ": 0.2,
+          "social": 0.05,
+          "gov": 0,
+          "nat": 0
+        },
+        "support": 0.09161793372319688,
+        "family": "catchall",
+        "cohesion": 0.9,
+        "color": "#13784a",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.916,
+          "activistsK": 18.324,
+          "influence": 29.581,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "PP",
+        "ideology": {
+          "econ": 0.5,
+          "social": 0.4,
+          "gov": 0.15,
+          "nat": 0.2
+        },
+        "support": 0.09746588693957114,
+        "family": "conservative",
+        "cohesion": 0.9,
+        "color": "#003399",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.975,
+          "activistsK": 19.493,
+          "influence": 29.873,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "UNIAO",
+        "ideology": {
+          "econ": 0.5,
+          "social": 0.25,
+          "gov": 0.05,
+          "nat": 0.15
+        },
+        "support": 0.11500974658869395,
+        "family": "conservative",
+        "cohesion": 0.9,
+        "color": "#1756a9",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 1.15,
+          "activistsK": 23.002,
+          "influence": 30.75,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "REPUBLICANOS",
+        "ideology": {
+          "econ": 0.35,
+          "social": 0.6,
+          "gov": 0.15,
+          "nat": 0.2
+        },
+        "support": 0.08576998050682261,
+        "family": "conservative",
+        "cohesion": 0.9,
+        "color": "#0057a7",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.858,
+          "activistsK": 17.154,
+          "influence": 29.288,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "PSB",
+        "ideology": {
+          "econ": -0.35,
+          "social": -0.2,
+          "gov": -0.15,
+          "nat": -0.05
+        },
+        "support": 0.031189083820662766,
+        "family": "socdem",
+        "cohesion": 0.9,
+        "color": "#f5b626",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.312,
+          "activistsK": 6.238,
+          "influence": 26.559,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "PDT",
+        "ideology": {
+          "econ": -0.4,
+          "social": -0.1,
+          "gov": -0.1,
+          "nat": 0.2
+        },
+        "support": 0.031189083820662766,
+        "family": "socdem",
+        "cohesion": 0.9,
+        "color": "#e51c23",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.312,
+          "activistsK": 6.238,
+          "influence": 26.559,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "PSDB",
+        "ideology": {
+          "econ": 0.3,
+          "social": -0.1,
+          "gov": -0.2,
+          "nat": -0.15
+        },
+        "support": 0.02729044834307992,
+        "family": "liberal",
+        "cohesion": 0.9,
+        "color": "#1762a7",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.273,
+          "activistsK": 5.458,
+          "influence": 26.365,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "CIDADANIA",
+        "ideology": {
+          "econ": 0.1,
+          "social": -0.2,
+          "gov": -0.2,
+          "nat": -0.15
+        },
+        "support": 0.007797270955165692,
+        "family": "liberal",
+        "cohesion": 0.9,
+        "color": "#e40083",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.078,
+          "activistsK": 1.559,
+          "influence": 25.39,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "PODE",
+        "ideology": {
+          "econ": 0.25,
+          "social": 0.15,
+          "gov": 0,
+          "nat": 0.1
+        },
+        "support": 0.031189083820662766,
+        "family": "catchall",
+        "cohesion": 0.9,
+        "color": "#00a550",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.312,
+          "activistsK": 6.238,
+          "influence": 26.559,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "AVANTE",
+        "ideology": {
+          "econ": 0.1,
+          "social": 0.05,
+          "gov": 0,
+          "nat": 0.05
+        },
+        "support": 0.015594541910331383,
+        "family": "catchall",
+        "cohesion": 0.9,
+        "color": "#f58220",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.156,
+          "activistsK": 3.119,
+          "influence": 25.78,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "SOLIDARIEDADE",
+        "ideology": {
+          "econ": -0.25,
+          "social": -0.1,
+          "gov": -0.1,
+          "nat": 0
+        },
+        "support": 0.009746588693957114,
+        "family": "socdem",
+        "cohesion": 0.9,
+        "color": "#f47721",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.097,
+          "activistsK": 1.949,
+          "influence": 25.487,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "PRD",
+        "ideology": {
+          "econ": 0.3,
+          "social": 0.4,
+          "gov": 0.1,
+          "nat": 0.2
+        },
+        "support": 0.009746588693957114,
+        "family": "conservative",
+        "cohesion": 0.9,
+        "color": "#263c89",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.097,
+          "activistsK": 1.949,
+          "influence": 25.487,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "PSOL",
+        "ideology": {
+          "econ": -0.8,
+          "social": -0.7,
+          "gov": -0.35,
+          "nat": -0.2
+        },
+        "support": 0.021442495126705652,
+        "family": "socialist",
+        "cohesion": 0.9,
+        "color": "#f9ca00",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.214,
+          "activistsK": 4.288,
+          "influence": 26.072,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "REDE",
+        "ideology": {
+          "econ": -0.3,
+          "social": -0.5,
+          "gov": -0.35,
+          "nat": -0.2
+        },
+        "support": 0.007797270955165692,
+        "family": "green",
+        "cohesion": 0.9,
+        "color": "#54b948",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.078,
+          "activistsK": 1.559,
+          "influence": 25.39,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "PCdoB",
+        "ideology": {
+          "econ": -0.8,
+          "social": -0.3,
+          "gov": -0.1,
+          "nat": 0.15
+        },
+        "support": 0.017543859649122806,
+        "family": "socialist",
+        "cohesion": 0.9,
+        "color": "#c8102e",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.175,
+          "activistsK": 3.509,
+          "influence": 25.877,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "PV",
+        "ideology": {
+          "econ": -0.3,
+          "social": -0.5,
+          "gov": -0.25,
+          "nat": -0.2
+        },
+        "support": 0.007797270955165692,
+        "family": "green",
+        "cohesion": 0.9,
+        "color": "#198c36",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.078,
+          "activistsK": 1.559,
+          "influence": 25.39,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      },
+      {
+        "id": "NOVO",
+        "ideology": {
+          "econ": 0.85,
+          "social": 0.1,
+          "gov": -0.25,
+          "nat": -0.2
+        },
+        "support": 0.009746588693957114,
+        "family": "liberal",
+        "cohesion": 0.9,
+        "color": "#f37021",
+        "valence": 0.5,
+        "organization": {
+          "treasuryM": 0.097,
+          "activistsK": 1.949,
+          "influence": 25.487,
+          "credibility": 0.5,
+          "lastFundraiseMonth": null,
+          "lastRecruitMonth": null
+        }
+      }
+    ]
+  },
+  "bicameral": {
+    "seats": 81,
+    "sel": "equal-per-state",
+    "rel": "sym",
+    "term": 8,
+    "renew": "partial",
+    "renewFraction": 0.6666666666666666,
+    "renewCycle": 4,
+    "composition": {
+      "PL": 15,
+      "PSD": 14,
+      "MDB": 10,
+      "PT": 9,
+      "PP": 7,
+      "REPUBLICANOS": 5,
+      "UNIAO": 5,
+      "PODE": 4,
+      "PSB": 4,
+      "PDT": 3,
+      "PSDB": 3,
+      "NOVO": 1,
+      "SEM_PARTIDO": 1
+    }
+  }
+}

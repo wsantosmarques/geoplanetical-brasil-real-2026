@@ -1,0 +1,101 @@
+{
+  "id": "brasil-real-2026",
+  "version": "0.6.0",
+  "contentApi": 1,
+  "tier": "presentation",
+  "name": "Brasil Real 2026 - Partidos e Congresso",
+  "description": "Brasil Real 2026, experimental 0.6.0. Este mod fornece nomes e siglas. Para criar campanhas com os 20 partidos desde Novo jogo, instale o complemento Brasil Real 0.2.0 para Windows/Geoplanetical 1.0.6 ou 1.0.7. A Oficina sozinha não altera a simulação. Sem o complemento, use o cenário separado. A integração 0.2 acrescenta os 20 partidos ao início da campanha, à simulação e à apresentação do eleitorado; não converte saves existentes. Ideologias, apoio e atributos incluem aproximações de jogo. Retratos e diversos personagens continuam genéricos. Fontes e instruções: https://github.com/wsantosmarques/geoplanetical-brasil-real-2026",
+  "authors": [
+    "Wander"
+  ],
+  "provides": {
+    "partyNames": {
+      "076:PT": {
+        "name": "Partido dos Trabalhadores",
+        "tag": "PT"
+      },
+      "076:PL": {
+        "name": "Partido Liberal",
+        "tag": "PL"
+      },
+      "076:MDB": {
+        "name": "Movimento Democrático Brasileiro",
+        "tag": "MDB"
+      },
+      "076:PSD": {
+        "name": "Partido Social Democrático",
+        "tag": "PSD"
+      },
+      "076:PP": {
+        "name": "Progressistas",
+        "tag": "PP"
+      },
+      "076:UNIAO": {
+        "name": "União Brasil",
+        "tag": "UNIÃO"
+      },
+      "076:REPUBLICANOS": {
+        "name": "Republicanos",
+        "tag": "REPUBLICANOS"
+      },
+      "076:PSB": {
+        "name": "Partido Socialista Brasileiro",
+        "tag": "PSB"
+      },
+      "076:PDT": {
+        "name": "Partido Democrático Trabalhista",
+        "tag": "PDT"
+      },
+      "076:PSDB": {
+        "name": "Partido da Social Democracia Brasileira",
+        "tag": "PSDB"
+      },
+      "076:CIDADANIA": {
+        "name": "Cidadania",
+        "tag": "CIDADANIA"
+      },
+      "076:PODE": {
+        "name": "Podemos",
+        "tag": "PODE"
+      },
+      "076:AVANTE": {
+        "name": "Avante",
+        "tag": "AVANTE"
+      },
+      "076:SOLIDARIEDADE": {
+        "name": "Solidariedade",
+        "tag": "SOLIDARIEDADE"
+      },
+      "076:PRD": {
+        "name": "Partido Renovação Democrática",
+        "tag": "PRD"
+      },
+      "076:PSOL": {
+        "name": "Partido Socialismo e Liberdade",
+        "tag": "PSOL"
+      },
+      "076:REDE": {
+        "name": "Rede Sustentabilidade",
+        "tag": "REDE"
+      },
+      "076:PCdoB": {
+        "name": "Partido Comunista do Brasil",
+        "tag": "PCdoB"
+      },
+      "076:PV": {
+        "name": "Partido Verde",
+        "tag": "PV"
+      },
+      "076:NOVO": {
+        "name": "Partido Novo",
+        "tag": "NOVO"
+      }
+    },
+    "peopleNames": {
+      "leader:076": {
+        "name": "Luiz Inácio Lula da Silva"
+      }
+    }
+  },
+  "thumbnail": "images/capa-brasil-real-2026.png"
+}

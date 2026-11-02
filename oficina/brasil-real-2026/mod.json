@@ -1,10 +1,10 @@
 {
   "id": "brasil-real-2026",
-  "version": "0.5.1",
+  "version": "0.6.0",
   "contentApi": 1,
   "tier": "presentation",
   "name": "Brasil Real 2026 - Partidos e Congresso",
-  "description": "Brasil em 1º de janeiro de 2026. Projeto experimental com mod de apresentação, cenário complementar e extensão opcional do estúdio.\n\nANTES DE ASSINAR\nEste item da Oficina troca nomes e siglas. Ele não cria os 20 partidos em Novo jogo e não instala automaticamente o cenário ou a extensão. Para jogar com os 20 partidos, instale o cenário separado e use Carregar partida > Brasil_Real_2026_Experimental.\n\nDUAS OPÇÕES\nPadrão: mod + cenário. Os 20 partidos existem na campanha complementar, mas o estúdio original pode mostrar “alvo desconhecido” para os acrescentados.\nCom extensão: os mesmos mod e cenário, mais a extensão visual 0.1.0 para Windows/Geoplanetical 1.0.6. Os 20 partidos também aparecem com barrinhas no estúdio. A extensão exige instalação separada e pode precisar de atualização após mudanças do jogo. Não altera o motor da simulação.\n\nCONTEÚDO DO CENÁRIO\n20 partidos com nomes reais; Câmara com 513 cadeiras; Senado com 80 cadeiras partidárias e 1 independente; parte dos dirigentes e integrantes do governo com nomes reais. Referência histórica: início de 2026.\n\nLIMITES\nIdeologias, cores, apoio e atributos são calibrações de jogo. Apoio inicial usa proporção de cadeiras, não pesquisa de opinião. Retratos e personagens auxiliares continuam genéricos. O motor mantém simplificações eleitorais e legislativas. Não é uma reprodução integral do Brasil.\n\nGuarde sua campanha atual, habilite o mod, reinicie e carregue o cenário complementar. Salve o teste com outro nome.\n\nDownloads dos complementos e instruções: https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.5.1-experimental\n\nProjeto independente de Wander. Capa criada com IA. Versão 0.5.1.",
+  "description": "Brasil Real 2026, experimental 0.6.0. Este mod fornece nomes e siglas. Para criar campanhas com os 20 partidos desde Novo jogo, instale o complemento Brasil Real 0.2.0 para Windows/Geoplanetical 1.0.6 ou 1.0.7. A Oficina sozinha não altera a simulação. Sem o complemento, use o cenário separado. A integração 0.2 acrescenta os 20 partidos ao início da campanha, à simulação e à apresentação do eleitorado; não converte saves existentes. Ideologias, apoio e atributos incluem aproximações de jogo. Retratos e diversos personagens continuam genéricos. Fontes e instruções: https://github.com/wsantosmarques/geoplanetical-brasil-real-2026",
   "authors": [
     "Wander"
   ],
@@ -89,6 +89,11 @@
       "076:NOVO": {
         "name": "Partido Novo",
         "tag": "NOVO"
+      }
+    },
+    "peopleNames": {
+      "leader:076": {
+        "name": "Luiz Inácio Lula da Silva"
       }
     }
   },

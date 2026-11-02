@@ -1,7 +1,7 @@
 """Instalador local reversivel; nao le ou escreve conteudo de partidas."""
 import pathlib,json,os,shutil,datetime,hashlib,argparse,subprocess,tempfile,contextlib,msvcrt,uuid
 from asar_local import Asar
-from construir import build,EXPECTED_HEADER,EXPECTED_EXE
+from construir import build,EXPECTED_HEADER,EXPECTED_EXE,identify
 HERE=pathlib.Path(__file__).resolve().parent
 NAMES=('resources/app.asar','Geoplanetical.exe')
 def sha(p):
@@ -25,8 +25,8 @@ def operation_lock(game):
     finally:
         if locked:f.seek(0);msvcrt.locking(f.fileno(),msvcrt.LK_UNLCK,1)
         f.close()
-def check_closed():
-    r=subprocess.run(['powershell','-NoProfile','-NonInteractive','-Command',"@(Get-Process -Name Geoplanetical -ErrorAction SilentlyContinue).Count"],capture_output=True,text=True,check=True,creationflags=subprocess.CREATE_NO_WINDOW)
+def check_closed(game):
+    r=subprocess.run(['powershell','-NoProfile','-NonInteractive','-Command',"@(Get-Process -Name Geoplanetical -ErrorAction SilentlyContinue | Where-Object { -not $_.Path -or $_.Path -ieq $env:BRASIL_REAL_TARGET_EXE }).Count"],capture_output=True,text=True,check=True,env={**os.environ,'BRASIL_REAL_TARGET_EXE':str(game/'Geoplanetical.exe')},creationflags=subprocess.CREATE_NO_WINDOW)
     if r.stdout.strip()!='0':raise RuntimeError('Feche o Geoplanetical antes de instalar ou restaurar. O instalador nao encerra processos.')
 def cleanup(stage,game):
     if stage.resolve().parent!=game or not stage.name.startswith('brasil-real-editor-'):raise RuntimeError('Diretorio temporario inesperado; limpeza recusada')
@@ -35,13 +35,13 @@ def install(game,catalog):
     game=game.resolve(strict=True)
     with operation_lock(game):return _install(game,catalog)
 def _install(game,catalog):
-    check_closed();asar=game/'resources/app.asar';exe=game/'Geoplanetical.exe';state=game/'brasil-real-editor-installed.json'
+    check_closed(game);asar=game/'resources/app.asar';exe=game/'Geoplanetical.exe';state=game/'brasil-real-editor-installed.json'
     if state.exists():raise RuntimeError('Existe recibo anterior. Use restaurar antes de reinstalar; backups nao sao substituidos automaticamente.')
     if not catalog.is_file():raise RuntimeError('Catalogo nao encontrado junto do instalador: '+str(catalog))
-    if Asar(asar).header_hash!=EXPECTED_HEADER or sha(exe)!=EXPECTED_EXE:raise RuntimeError('Arquivos diferentes do Geoplanetical 1.0.6 estudado. Nenhuma alteracao realizada.')
+    version=identify(game)
     stage=pathlib.Path(tempfile.mkdtemp(prefix='brasil-real-editor-stage-',dir=game))
     backup=pathlib.Path(os.environ['LOCALAPPDATA'])/'BrasilRealEditor'/'backups'/datetime.datetime.now().strftime('%Y%m%d-%H%M%S-%f');backup.mkdir(parents=True)
-    receipt={'operationId':uuid.uuid4().hex,'extensionVersion':'0.1.0','gameVersion':'1.0.6','game':str(game),'backup':str(backup),'staging':str(stage),'state':'preparing','files':{}}
+    receipt={'operationId':uuid.uuid4().hex,'extensionVersion':'0.2.0','gameVersion':version,'game':str(game),'backup':str(backup),'staging':str(stage),'state':'preparing','files':{}}
     changed=[];journal=False;safe_cleanup=True
     try:
         print('Construindo pacote visual e recalculando integridade...',flush=True);receipt['construction']=build(game,stage,catalog)
@@ -49,7 +49,7 @@ def _install(game,catalog):
             p=game/name;h=sha(p);dest=backup/name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(p,dest)
             if sha(dest)!=h or sha(p)!=h:raise RuntimeError('Origem mudou durante backup: '+name)
             receipt['files'][name]={'originalSha256':h,'installedSha256':sha(stage/name)}
-        write_json(backup/'receipt.json',receipt);check_closed()
+        write_json(backup/'receipt.json',receipt);check_closed(game)
         for name in NAMES:
             if sha(game/name)!=receipt['files'][name]['originalSha256']:raise RuntimeError('Instalacao mudou antes da substituicao: '+name)
         receipt['state']='installing';write_json(state,receipt);journal=True
@@ -75,7 +75,7 @@ def restore(game):
     game=game.resolve(strict=True)
     with operation_lock(game):return _restore(game)
 def _restore(game):
-    check_closed();state=game/'brasil-real-editor-installed.json';receipt=json.loads(state.read_text(encoding='utf8'));backup=pathlib.Path(receipt['backup'])
+    check_closed(game);state=game/'brasil-real-editor-installed.json';receipt=json.loads(state.read_text(encoding='utf8'));backup=pathlib.Path(receipt['backup'])
     if pathlib.Path(receipt['game']).resolve()!=game or set(receipt['files'])!=set(NAMES):raise RuntimeError('Recibo invalido ou pertence a outra instalacao')
     start={}
     for name,info in receipt['files'].items():
@@ -88,7 +88,7 @@ def _restore(game):
             dest=stage/name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(backup/name,dest)
             rollback=stage/'rollback'/name;rollback.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(game/name,rollback)
             if sha(rollback)!=start[name] or sha(dest)!=receipt['files'][name]['originalSha256']:raise RuntimeError('Copias de restauracao divergentes')
-        check_closed()
+        check_closed(game)
         for name in NAMES:
             if sha(game/name)!=start[name]:raise RuntimeError('Arquivo mudou antes de restaurar: '+name)
         receipt['state']='restoring';receipt['restoreStaging']=str(stage);write_json(state,receipt)
