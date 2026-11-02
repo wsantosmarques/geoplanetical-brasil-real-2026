@@ -1,5 +1,7 @@
 """Leitura e atualizacao local de ASAR. Nao desativa fuses do Electron."""
 import pathlib,json,struct,hashlib,copy,shutil
+from progresso import copy_stream
+
 def digest(data):return hashlib.sha256(data).hexdigest()
 class Asar:
     def __init__(self,file):
@@ -31,7 +33,7 @@ class Asar:
         raw=json.dumps(tree,ensure_ascii=False,separators=(',',':')).encode('utf8');pad=(-len(raw))%4;payload=4+len(raw)+pad
         with pathlib.Path(target).open('xb') as out,self.file.open('rb') as source:
             out.write(struct.pack('<4I',4,4+payload,payload,len(raw)));out.write(raw);out.write(b'\0'*pad)
-            source.seek(self.base);shutil.copyfileobj(source,out,16*1024*1024)
+            source.seek(self.base);copy_stream(source,out,self.identity.st_size-self.base,self.file.name,'Construindo')
             for data in replacements.values():out.write(data)
         if identity(self.file)!=expected or Asar(self.file).header_hash!=self.header_hash:raise ValueError('ASAR de origem mudou durante a construcao')
         result=Asar(target)

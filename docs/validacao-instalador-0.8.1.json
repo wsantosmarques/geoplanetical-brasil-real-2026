@@ -1,0 +1,23 @@
+{
+  "installerVersion": "0.8.1",
+  "integrationVersion": "0.3.1",
+  "historicalDatasetVersion": "0.8.0",
+  "nativeSourceUiRenderedAndCaptured": true,
+  "nativeSourceUiScreenshot": "../imagens/instalador-0.8.1.png",
+  "temporaryIoTransactionsPassed": [
+    "copy",
+    "sha256",
+    "sameFileRejected",
+    "threadLocalProgress",
+    "install",
+    "restore",
+    "rollbackAfterInjectedFailure",
+    "logDirectoryFailureHandled"
+  ],
+  "asarStreamingFixturePassed": true,
+  "frozenArchiveInspected": true,
+  "packagedPhotoCount": 45,
+  "frozenInstallerExecuted": false,
+  "realGameChangedBy081": false,
+  "updaterImplemented": false
+}

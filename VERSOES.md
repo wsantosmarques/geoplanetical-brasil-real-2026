@@ -1,5 +1,10 @@
 # Versões
 
+## 0.8.1 experimental: instalador e apresentação
+
+Interface escura/dourada, capa e MeB Mods. Etapas, progresso por bytes, velocidade, cronômetro e registro imediato. Transações de I/O e rollback testados em temporários. Dados políticos 0.8.0 e integração 0.3.1 mantidos. EXE compilado e inspecionado, sem execução automática. Não implementa atualização automática.
+
+
 ## Revisão editorial da apresentação 0.8.0
 
 Descrição separa Steam e Full; antivírus destacado. Referência local de backup legado virtualizado reparada após conferir hashes. Fonte passa a gravar o caminho físico do backup. EXE/ZIP publicados continuam com os mesmos bytes e hashes. Usuário abriu o instalador; conclusão da atualização aguarda nova tentativa.

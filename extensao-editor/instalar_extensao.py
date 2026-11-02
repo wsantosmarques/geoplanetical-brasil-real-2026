@@ -1,11 +1,12 @@
 """Instalador local reversivel; nao le ou escreve conteudo de partidas."""
 import pathlib,json,os,shutil,datetime,hashlib,argparse,subprocess,tempfile,contextlib,msvcrt,uuid
 from asar_local import Asar
+from progresso import file_sha,copy_file
 from construir import build,EXPECTED_HEADER,EXPECTED_EXE,identify
 HERE=pathlib.Path(__file__).resolve().parent
 NAMES=('resources/app.asar','Geoplanetical.exe')
 def sha(p):
-    with p.open('rb') as f:return hashlib.file_digest(f,'sha256').hexdigest()
+    return file_sha(p)
 def write_json(p,data):
     temp=p.with_name(p.name+'.'+uuid.uuid4().hex+'.tmp')
     try:
@@ -48,7 +49,7 @@ def _install(game,catalog):
         for name in NAMES:
             print('Verificando original: '+name,flush=True)
             p=game/name;h=sha(p);dest=backup/name;dest.parent.mkdir(parents=True,exist_ok=True)
-            print('Criando backup: '+name+' (a cópia e a conferência podem levar alguns minutos)',flush=True);shutil.copy2(p,dest)
+            print('Criando backup: '+name+' (a cópia e a conferência podem levar alguns minutos)',flush=True);copy_file(p,dest)
             if sha(dest)!=h or sha(p)!=h:raise RuntimeError('Origem mudou durante backup: '+name)
             receipt['files'][name]={'originalSha256':h,'installedSha256':sha(stage/name)}
         write_json(backup/'receipt.json',receipt);check_closed(game)
@@ -63,7 +64,7 @@ def _install(game,catalog):
         print(json.dumps({'state':'installed','backup':str(backup),'savesTouched':False,'fusesUnchanged':True}),flush=True);return receipt
     except Exception:
         try:
-            for name in reversed(changed):shutil.copy2(backup/name,game/name)
+            for name in reversed(changed):copy_file(backup/name,game/name)
             for name in changed:
                 if sha(game/name)!=receipt['files'][name]['originalSha256']:raise RuntimeError('Rollback divergente: '+name)
             receipt['state']='rolled-back' if changed else 'not-installed';write_json(backup/'receipt.json',receipt)
@@ -90,8 +91,8 @@ def _restore(game):
     try:
         for name in NAMES:
             print('Preparando restauração segura: '+name+' (cópia do original e da versão atual)',flush=True)
-            dest=stage/name;dest.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(backup/name,dest)
-            rollback=stage/'rollback'/name;rollback.parent.mkdir(parents=True,exist_ok=True);shutil.copy2(game/name,rollback)
+            dest=stage/name;dest.parent.mkdir(parents=True,exist_ok=True);copy_file(backup/name,dest)
+            rollback=stage/'rollback'/name;rollback.parent.mkdir(parents=True,exist_ok=True);copy_file(game/name,rollback)
             if sha(rollback)!=start[name] or sha(dest)!=receipt['files'][name]['originalSha256']:raise RuntimeError('Copias de restauracao divergentes')
         check_closed(game)
         for name in NAMES:
@@ -105,7 +106,7 @@ def _restore(game):
         print(json.dumps({'state':'restored','savesTouched':False}),flush=True)
     except Exception:
         try:
-            for name in reversed(changed):shutil.copy2(stage/'rollback'/name,game/name)
+            for name in reversed(changed):copy_file(stage/'rollback'/name,game/name)
             for name in changed:
                 if sha(game/name)!=start[name]:raise RuntimeError('Rollback da restauracao divergente: '+name)
             receipt['state']=previous_state;write_json(state,receipt)

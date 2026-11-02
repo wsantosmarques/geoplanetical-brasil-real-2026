@@ -1,24 +1,21 @@
-[h1]Brasil Real 2026 | MeB Mods | 0.8.0 experimental[/h1]
-
-BRASIL REAL 2026 | MeB Mods | 0.8.0 experimental
+[h1]Brasil Real 2026 | MeB Mods | 0.8.1 experimental[/h1]
 Referência histórica: 1º de janeiro de 2026.
 
-ESCOLHA COMO USAR
+[h2]ESCOLHA COMO USAR[/h2]
 
-1. VERSÃO STEAM | SOMENTE ESTE MOD
+[h2]1. VERSÃO STEAM | SOMENTE ESTE MOD[/h2]
 Assine na Oficina, ative e reinicie. Troca nomes/siglas dos partidos existentes e nome/foto de Lula. NÃO cria os 20 partidos, NÃO amplia dirigentes/ministros e NÃO instala a integração Full. Sem a Full, o jogo conserva seu conjunto original de partidos; o estúdio pode indicar “alvo desconhecido” para os IDs adicionais.
 
-2. VERSÃO FULL | INSTALADOR DO GITHUB
-Baixe BrasilReal2026-Instalador-0.8.0.exe na release abaixo. Feche o jogo, execute e escolha Instalar / atualizar. Inclui este mod + integração: 20 partidos na escolha inicial, estúdio, Congresso e eleitorado; 47 identidades históricas e 45 fotos reais. Câmara: 513 cadeiras; Senado: 81. Comece em Novo jogo > Brasil. Seus saves existentes não são convertidos. Windows / Geoplanetical 1.0.7 estudado; backup e restauração disponíveis.
+[h2]2. VERSÃO FULL | INSTALADOR DO GITHUB[/h2]
+Instalar a Full é simples: baixe BrasilReal2026-Instalador-0.8.1.exe no GitHub abaixo. Feche o jogo, execute e escolha Instalar / atualizar. Inclui este mod + integração: 20 partidos na escolha inicial, estúdio, Congresso e eleitorado; 47 identidades históricas e 45 fotos reais. Câmara: 513 cadeiras; Senado: 81. Comece em Novo jogo > Brasil. Seus saves existentes não são convertidos. Windows / Geoplanetical 1.0.7 estudado; backup e restauração disponíveis.
 
-ANTIVÍRUS | RESULTADOS DISPONÍVEIS
-Defender local e GitHub Actions: nenhuma ameaça detectada nos arquivos 0.8.0 verificados. Relatórios e SHA-256 públicos em seguranca/ no GitHub. O EXE não tem assinatura digital; Edge/SmartScreen pode mostrar download pouco conhecido e fornecedor desconhecido. Esses avisos são de reputação, não equivalem a detecção de vírus. A análise não é garantia absoluta.
+[h2]ANTIVÍRUS | RESULTADOS DISPONÍVEIS[/h2]
+Consulte na release os resultados do Defender local e do GitHub Actions para esta versão, com relatórios e hashes SHA-256 públicos. O EXE não tem assinatura digital; Edge/SmartScreen pode mostrar download pouco conhecido e fornecedor desconhecido. Esses avisos são de reputação, não equivalem a detecção de vírus. A análise não é garantia absoluta.
 
-LIMITES DA FULL
+[h2]LIMITES DA FULL[/h2]
 Duas fotos pendentes: Antonio Rueda e Eduardo Ribeiro. Cinco pastas abstratas: quatro titulares reais e Interior fictício. Ministérios adicionais ainda em estudo. Apoios/atributos incluem calibração; não são pesquisa eleitoral ou avaliação biográfica. Retratos reais com créditos/licenças; capa criada com IA. As capturas da Full exigem o instalador.
 
 FULL, FONTES E ANTIVÍRUS:
-https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.8.0-experimental
+https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.8.1-experimental
 
-
-[url=https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.8.0-experimental]Instalador, fontes e relatórios[/url]
+Captura do instalador e instruções no GitHub. Basta baixar o EXE, fechar o jogo e clicar em Instalar / atualizar. A versão Full já instalada não precisa ser reinstalada apenas pela nova aparência.

@@ -1,6 +1,6 @@
 # Instalação Full e aviso de download
 
-Baixe **BrasilReal2026-Instalador-0.8.0.exe** na [release 0.8.0](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.8.0-experimental). O ZIP é apenas o mod de apresentação no formato da Oficina.
+Baixe **BrasilReal2026-Instalador-0.8.1.exe** na [release 0.8.1](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/tag/v0.8.1-experimental). O ZIP é apenas o mod de apresentação no formato da Oficina.
 
 Feche o jogo, abra o instalador, confira a pasta e use **Instalar / atualizar**. Depois, abra **Novo jogo > Brasil**. A integração não converte suas partidas atuais.
 
@@ -24,7 +24,11 @@ Referência: [Microsoft, reputação do SmartScreen para aplicativos Windows](ht
 
 A atualização 0.8.0 confere hashes, prepara a restauração anterior, constrói o novo pacote, cria backup e aplica/verifica os arquivos. O arquivo principal ocupa aproximadamente 4 GB; as cópias e leituras de integridade podem levar vários minutos. A barra da 0.8.0 é uma animação de atividade, não uma porcentagem de conclusão.
 
-O código-fonte recebeu uma melhoria com etapa atual, registro imediato e tempo decorrido. Ela foi testada sem executar o EXE empacotado; ainda não está incluída no instalador 0.8.0 publicado. Esse binário e seus hashes permanecem iguais.
+O instalador **0.8.1** inclui capa/MeB Mods, etapa atual, log imediato, cronômetro e progresso real em bytes do arquivo copiado ou verificado. Não inventa porcentagem global ou prazo restante. A 0.8.0 permanece disponível com a interface antiga. A nova interface e as transações foram testadas em fonte/arquivos temporários; o EXE empacotado não foi executado automaticamente.
+
+![Prévia nativa do novo instalador](../imagens/instalador-0.8.1.png)
+
+Se você já instalou a Full 0.8.0, a integração continua a mesma 0.3.1. Não precisa reinstalar apenas para mudar a aparência do instalador.
 
 ## Onde revisar e publicar?
 

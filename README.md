@@ -2,21 +2,23 @@
 
 <p align="center"><img src="imagens/marca/meb-mods-selo.svg" width="150" alt="MeB Mods"><br><img src="imagens/capa-meb.png" width="260" alt="Capa Brasil Real 2026"></p>
 
-**Brasil em 1º de janeiro de 2026:** 20 partidos, 47 identidades históricas e 45 fotografias reais em campanhas novas. Versão **0.8.0 experimental**, integração **0.3.1** para Windows / Geoplanetical **1.0.7 estudado**.
+**Brasil em 1º de janeiro de 2026:** 20 partidos, 47 identidades históricas e 45 fotografias reais em campanhas novas. Pacote **0.8.1 experimental**, integração **0.3.1** para Windows / Geoplanetical **1.0.7 estudado**.
 
-[**Baixar instalador único (.exe)**](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/download/v0.8.0-experimental/BrasilReal2026-Instalador-0.8.0.exe) · [Releases e SHA-256](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases) · [Verificações antivírus](seguranca/README.md) · [Antivírus no GitHub: passou](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41373376571)
+[**Baixar instalador único (.exe)**](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/download/v0.8.1-experimental/BrasilReal2026-Instalador-0.8.1.exe) · [Releases e SHA-256](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases) · [Verificações antivírus](seguranca/README.md)
 
 ## Qual versão escolher?
 
 | | Steam, somente Oficina | Full, instalador do GitHub |
 |---|---|---|
-| Instalação | Assinar, ativar e reiniciar | Baixar **BrasilReal2026-Instalador-0.8.0.exe**, fechar o jogo e instalar |
+| Instalação | Assinar, ativar e reiniciar | Baixar **BrasilReal2026-Instalador-0.8.1.exe**, fechar o jogo e instalar |
 | Nomes/siglas e nome/foto de Lula | Sim, nos alvos existentes | Sim |
 | 20 partidos na escolha inicial, Congresso, estúdio e eleitorado | Não | Sim, em campanha nova |
 | 47 identidades e 45 fotos | Não | Sim |
 | Ministérios adicionais funcionais | Não | Ainda não implementados |
 
-**Antivírus: Defender local e GitHub Actions sem ameaça detectada nos arquivos 0.8.0 verificados.** [Ver resultado no GitHub](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41373376571) · [Relatórios e SHA-256](seguranca/README.md). O EXE não tem assinatura digital: Edge/SmartScreen pode avisar sobre baixa reputação e fornecedor desconhecido. Isso difere de uma detecção de malware e não deve ser apresentado como certificação de segurança.
+**Instalar a Full é simples:** baixe o EXE no GitHub, feche o jogo e clique em **Instalar / atualizar**. Dispensa Python e gerenciador instalado no Windows.
+
+**Antivírus e integridade:** [resultados por versão, relatórios Defender e hashes SHA-256](seguranca/README.md). O EXE não tem assinatura digital: Edge/SmartScreen pode avisar sobre reputação insuficiente e fornecedor desconhecido. As análises não são certificação ou garantia absoluta.
 
 ## Veja no jogo
 
@@ -28,7 +30,10 @@ Capturas em perfil de teste separado. Clique para ampliar; as imagens ficam reun
 | **Ministros nas telas nativas** | **Intenções de voto** |
 | <a href="imagens/ministros-2026.png"><img src="imagens/ministros-2026.png" width="360" alt="Ministros e vice-presidente"></a> | <a href="imagens/eleitorado-20.png"><img src="imagens/eleitorado-20.png" width="360" alt="20 legendas no eleitorado"></a> |
 
-[Ver as três novas fotografias no jogo](imagens/novas-fotos.png)
+| **Instalador Full 0.8.1** | **Três novas fotografias** |
+| <a href="imagens/instalador-0.8.1.png"><img src="imagens/instalador-0.8.1.png" width="360" alt="Prévia nativa do instalador com capa MeB Mods"></a> | <a href="imagens/novas-fotos.png"><img src="imagens/novas-fotos.png" width="360" alt="Paula Coradi, Iaraci Dias e Marcus Vinícius Ferreira"></a> |
+
+A captura do instalador foi feita na interface nativa em modo de prévia, sem executar o EXE ou alterar o jogo. A 0.8.1 melhora instalação/progresso; os dados políticos continuam os da 0.8.0 e a integração é 0.3.1.
 
 [Ajuda para instalar e entender os avisos do Windows](docs/instalacao.md).
 
@@ -82,3 +87,5 @@ Na 0.7: duas sementes, 47 identidades, salvar/recarregar e um dia; desktop com 2
 A 0.8 passou no teste desktop isolado com 45 fotos. O EXE compilado foi inspecionado e analisado pelo Defender, mas não foi executado nesta rodada: a revisão automática rejeitou o comando combinado de self-test, sem indicar motivo específico. A validação específica está registrada junto à release. Não foi implementado nem validado um gabinete de 38 cargos funcionais.
 
 </details>
+
+**Atualizações futuras:** estudamos um botão de consulta às releases, sem serviço residente. Ainda não está implementado. [Opções e recomendação](docs/atualizacoes-futuras.md).

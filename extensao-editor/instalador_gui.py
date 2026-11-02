@@ -7,7 +7,7 @@ from tkinter import ttk,filedialog,messagebox
 from instalar_extensao import operation_lock,_install,_restore,check_closed,sha,write_json
 from construir import identify
 HERE=pathlib.Path(getattr(sys,'_MEIPASS',pathlib.Path(__file__).resolve().parent))
-VERSION='0.8.0'
+VERSION='0.8.1'
 def steam_games():
     roots=[]
     try:
@@ -85,63 +85,10 @@ def perform(action,game):
             if game_changed:_restore(game)
             raise
         return 'Concluído. Abra Novo jogo e escolha Brasil para os 20 partidos, 47 identidades e 45 fotos. Consulte Política > Personalidades para ver fontes e lideranças. As campanhas existentes foram preservadas e não recebem as novas identidades.'
-class App:
+from instalador_view import AppView
+class App(AppView):
     def __init__(self,root):
-        self.root=root;root.title('Brasil Real 2026 | Instalador '+VERSION);root.geometry('730x510');root.minsize(650,430);self.busy=False;self.events=queue.Queue()
-        style=ttk.Style();style.theme_use('vista');style.configure('Title.TLabel',font=('Segoe UI',20,'bold'));style.configure('TLabel',font=('Segoe UI',10));style.configure('TButton',font=('Segoe UI',10),padding=8)
-        body=ttk.Frame(root,padding=24);body.pack(fill='both',expand=True)
-        ttk.Label(body,text='Brasil Real 2026',style='Title.TLabel').pack(anchor='w')
-        ttk.Label(body,text='20 partidos, 47 identidades históricas e 45 fotos reais em campanhas novas.',wraplength=650).pack(anchor='w',pady=(4,14))
-        ttk.Label(body,text='Pasta do Geoplanetical').pack(anchor='w');row=ttk.Frame(body);row.pack(fill='x',pady=5)
-        found=steam_games();self.path=tk.StringVar(value=str(found[0]) if found else '')
-        ttk.Entry(row,textvariable=self.path).pack(side='left',fill='x',expand=True);self.browse=ttk.Button(row,text='Procurar',command=self.choose);self.browse.pack(side='left',padx=(8,0))
-        ttk.Label(body,text='Feche o jogo antes de instalar. Seus saves não serão convertidos.\nO instalador cria backup dos arquivos do jogo e permite restaurá-los.',wraplength=650).pack(anchor='w',pady=10)
-        buttons=ttk.Frame(body);buttons.pack(fill='x',pady=8)
-        self.install=ttk.Button(buttons,text='Instalar / atualizar',command=lambda:self.start('install'));self.install.pack(side='left')
-        self.restore=ttk.Button(buttons,text='Restaurar jogo',command=lambda:self.start('restore'));self.restore.pack(side='left',padx=8)
-        self.bar=ttk.Progressbar(body,mode='indeterminate');self.bar.pack(fill='x',pady=10)
-        self.status=tk.StringVar(value='Pronto para instalar. Compatível com a versão 1.0.7 estudada.')
-        ttk.Label(body,textvariable=self.status,wraplength=650).pack(anchor='w')
-        self.elapsed=tk.StringVar(value='')
-        ttk.Label(body,textvariable=self.elapsed).pack(anchor='w',pady=(6,0))
-        root.protocol('WM_DELETE_WINDOW',self.close);root.after(150,self.poll)
-    def choose(self):
-        value=filedialog.askdirectory(title='Selecione a pasta que contém Geoplanetical.exe')
-        if value:self.path.set(value)
-    def close(self):
-        if self.busy:messagebox.showinfo('Operação em andamento','Aguarde a conclusão para fechar o instalador.');return
-        self.root.destroy()
-    def start(self,action):
-        if self.busy:return
-        game=pathlib.Path(self.path.get())
-        if not (game/'Geoplanetical.exe').is_file():messagebox.showerror('Pasta não encontrada','Selecione a pasta que contém Geoplanetical.exe.');return
-        self.started=time.monotonic();self.busy=True;self.install.state(['disabled']);self.restore.state(['disabled']);self.browse.state(['disabled']);self.bar.start(15);self.status.set('Conferindo arquivos, criando backups e aplicando alterações. Aguarde...')
-        threading.Thread(target=self.run,args=(action,game),daemon=True).start()
-    def run(self,action,game):
-        logs=pathlib.Path(os.environ['LOCALAPPDATA'])/'BrasilRealEditor/logs';logs.mkdir(parents=True,exist_ok=True);log=logs/('instalador-'+datetime.datetime.now().strftime('%Y%m%d-%H%M%S')+'.log')
-        try:
-            with log.open('w',encoding='utf8',buffering=1) as file:
-                stream=ProgressLog(file,lambda line:self.events.put(('progress',line)))
-                with contextlib.redirect_stdout(stream),contextlib.redirect_stderr(stream):
-                    try:msg=perform(action,game)
-                    except Exception:traceback.print_exc();raise
-            self.events.put(('done',True,msg))
-        except Exception as e:self.events.put(('done',False,str(e)+'\nRegistro: '+str(log)))
-    def poll(self):
-        try:
-            while True:
-                event=self.events.get_nowait()
-                if event[0]=='progress':
-                    self.status.set(event[1])
-                    continue
-                _,ok,msg=event
-                self.busy=False;self.bar.stop();self.install.state(['!disabled']);self.restore.state(['!disabled']);self.browse.state(['!disabled']);self.status.set(msg)
-                if not ok:messagebox.showerror('Não foi possível concluir',msg)
-        except queue.Empty:pass
-        if hasattr(self,'started'):
-            seconds=int(time.monotonic()-self.started)
-            self.elapsed.set(('Em andamento' if self.busy else 'Tempo decorrido')+f': {seconds//60:02d}:{seconds%60:02d}. '+('A etapa atual aparece acima; arquivos grandes podem levar alguns minutos.' if self.busy else ''))
-        self.root.after(150,self.poll)
+        super().__init__(root,perform,HERE,VERSION,steam_games)
 
 def main():
     p=argparse.ArgumentParser();p.add_argument('--self-test',action='store_true');p.add_argument('--result',type=pathlib.Path);args=p.parse_args()

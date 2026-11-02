@@ -13,7 +13,7 @@
 - [x] Conteúdo 0.8 validado no aplicativo isolado: 47 registros, 45 fotos e 20 partidos.
 - [x] Usuário abriu o instalador 0.8.0; o self-test automatizado anterior não foi executado.
 - [x] Erro local de caminho de backup virtualizado identificado; referência reparada após verificar hashes, sem alterar saves/binários.
-- [ ] Confirmar a conclusão da atualização 0.8.0 na nova tentativa do usuário.
+- [x] Atualização 0.8.0 concluída pelo usuário; integração 0.3.1 instalada e saves conferidos.
 - [x] Mod local preparado no estúdio: capa, versão, Steam versus Full e antivírus visível.
 - [ ] Aceite do Wander e campanha longa com as identidades atuais.
 - [ ] Item privado Steam: tentativa recusada com access denied; sem item/link confirmado.
@@ -21,4 +21,6 @@
 - [ ] Publicação pública na Oficina.
 
 - [x] Progresso detalhado no código-fonte: etapa, log imediato e cronômetro, com teste de eventos sem executar o instalador.
-- [ ] Empacotar essa melhoria numa próxima versão do EXE; a 0.8.0 publicada mantém a interface anterior.
+- [x] Interface e progresso real empacotados na 0.8.1; a 0.8.0 mantém a interface antiga.
+- [x] Captura nativa da prévia do instalador 0.8.1 incluída no README e na galeria preparada.
+- [ ] Consulta de atualizações pelo aplicativo: proposta documentada, ainda não implementada.
