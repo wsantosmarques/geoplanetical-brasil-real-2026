@@ -6,6 +6,18 @@
 
 [**Baixar instalador único (.exe)**](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases/download/v0.8.0-experimental/BrasilReal2026-Instalador-0.8.0.exe) · [Releases e SHA-256](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/releases) · [Verificações antivírus](seguranca/README.md) · [Antivírus no GitHub: passou](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41373376571)
 
+## Qual versão escolher?
+
+| | Steam, somente Oficina | Full, instalador do GitHub |
+|---|---|---|
+| Instalação | Assinar, ativar e reiniciar | Baixar **BrasilReal2026-Instalador-0.8.0.exe**, fechar o jogo e instalar |
+| Nomes/siglas e nome/foto de Lula | Sim, nos alvos existentes | Sim |
+| 20 partidos na escolha inicial, Congresso, estúdio e eleitorado | Não | Sim, em campanha nova |
+| 47 identidades e 45 fotos | Não | Sim |
+| Ministérios adicionais funcionais | Não | Ainda não implementados |
+
+**Antivírus: Defender local e GitHub Actions sem ameaça detectada nos arquivos 0.8.0 verificados.** [Ver resultado no GitHub](https://github.com/wsantosmarques/geoplanetical-brasil-real-2026/actions/runs/41373376571) · [Relatórios e SHA-256](seguranca/README.md). O EXE não tem assinatura digital: Edge/SmartScreen pode avisar sobre baixa reputação e fornecedor desconhecido. Isso difere de uma detecção de malware e não deve ser apresentado como certificação de segurança.
+
 ## Veja no jogo
 
 Capturas em perfil de teste separado. Clique para ampliar; as imagens ficam reunidas aqui.
@@ -17,6 +29,8 @@ Capturas em perfil de teste separado. Clique para ampliar; as imagens ficam reun
 | <a href="imagens/ministros-2026.png"><img src="imagens/ministros-2026.png" width="360" alt="Ministros e vice-presidente"></a> | <a href="imagens/eleitorado-20.png"><img src="imagens/eleitorado-20.png" width="360" alt="20 legendas no eleitorado"></a> |
 
 [Ver as três novas fotografias no jogo](imagens/novas-fotos.png)
+
+[Ajuda para instalar e entender os avisos do Windows](docs/instalacao.md).
 
 ## Instalação e uso
 

@@ -11,7 +11,10 @@
 - [x] Defender local: pacotes 0.7 e 0.8 sem ameaça detectada nas análises registradas.
 - [x] Scanner manual no GitHub Actions: passou, nenhuma ameaça detectada na 0.8; arquivos e hashes conferidos, sem executar o instalador.
 - [x] Conteúdo 0.8 validado no aplicativo isolado: 47 registros, 45 fotos e 20 partidos.
-- [ ] Execução do instalador 0.8: comando de self-test bloqueado por revisão automática; arquivo compilado e inspecionado, sem execução nesta rodada.
+- [x] Usuário abriu o instalador 0.8.0; o self-test automatizado anterior não foi executado.
+- [x] Erro local de caminho de backup virtualizado identificado; referência reparada após verificar hashes, sem alterar saves/binários.
+- [ ] Confirmar a conclusão da atualização 0.8.0 na nova tentativa do usuário.
+- [x] Mod local preparado no estúdio: capa, versão, Steam versus Full e antivírus visível.
 - [ ] Aceite do Wander e campanha longa com as identidades atuais.
 - [ ] Item privado Steam: tentativa recusada com access denied; sem item/link confirmado.
 - [x] Prévia local da página e descrição preparadas.

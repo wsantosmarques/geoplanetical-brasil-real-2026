@@ -12,3 +12,5 @@ Os relatórios do GitHub ficam no artefato do job, por 90 dias. Um scanner indis
 O instalador ainda não tem assinatura digital. Ausência de detecção nessa análise não prova ausência de vulnerabilidades ou de ameaças futuras. Os relatórios não são certificados de aprovação da Microsoft, GitHub ou Steam.
 
 O executável completo fica no GitHub. A Oficina aceita apenas os arquivos de apresentação suportados pelo jogo; a página da Steam deve apontar para a release e esta evidência, sem prometer que a Oficina instala ou certifica o EXE.
+
+[Como interpretar o aviso de reputação do Edge/SmartScreen](../docs/instalacao.md#antivírus-e-smartscreen). A análise antivírus e a reputação do download são verificações distintas.
