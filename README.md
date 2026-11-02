@@ -31,10 +31,10 @@ Capturas em perfil de teste separado. Clique para ampliar; as imagens ficam reun
 | <a href="imagens/escolha-20.png"><img src="imagens/escolha-20.png" width="360" alt="Seleção dos 20 partidos"></a> | <a href="imagens/liderancas-2026.png"><img src="imagens/liderancas-2026.png" width="360" alt="Lideranças com fotografias e fontes"></a> |
 | **Ministros nas telas nativas** | **Intenções de voto** |
 | <a href="imagens/ministros-2026.png"><img src="imagens/ministros-2026.png" width="360" alt="Ministros e vice-presidente"></a> | <a href="imagens/eleitorado-20.png"><img src="imagens/eleitorado-20.png" width="360" alt="20 legendas no eleitorado"></a> |
-| **Instalador Full 0.8.1** | **Três novas fotografias** |
-| <a href="imagens/instalador-0.8.1.png"><img src="imagens/instalador-0.8.1.png" width="360" alt="Prévia nativa do instalador com capa MeB Mods"></a> | <a href="imagens/novas-fotos.png"><img src="imagens/novas-fotos.png" width="360" alt="Paula Coradi, Iaraci Dias e Marcus Vinícius Ferreira"></a> |
+| **Instalador Full 0.8.2: teste concluído** | **Três novas fotografias** |
+| <a href="imagens/instalador-0.8.2-concluido.png"><img src="imagens/instalador-0.8.2-concluido.png" width="360" alt="Instalador 0.8.2 com atualização real concluída pelo usuário"></a> | <a href="imagens/novas-fotos.png"><img src="imagens/novas-fotos.png" width="360" alt="Paula Coradi, Iaraci Dias e Marcus Vinícius Ferreira"></a> |
 
-A captura do instalador foi feita na interface nativa em modo de prévia, sem executar o EXE ou alterar o jogo. O visual mostrado é o da prévia 0.8.1, mantido na 0.8.2. A 0.8.2 corrige o falso sucesso com registro incompleto; dados políticos 0.8.0 e integração 0.3.1 mantidos. A atualização real foi concluída manualmente pelo usuário sobre a integração 0.3.1; os hashes dos arquivos e nove saves foram conferidos. [Registro do teste](docs/teste-manual-0.8.2.json).
+A captura do instalador mostra a **atualização real da 0.8.2 concluída pelo usuário**, sobre a integração 0.3.1. Conferimos os hashes dos arquivos instalados e **nove saves permaneceram iguais**. Os dados políticos continuam os da 0.8.0. [Registro do teste](docs/teste-manual-0.8.2.json).
 
 [Ajuda para instalar e entender os avisos do Windows](docs/instalacao.md).
 
@@ -64,14 +64,11 @@ Dispensa Python. Faz backup e oferece **Restaurar jogo**. Reserve cerca de 12 GB
 
 Apoio inicial deriva de calibração de cadeiras, não de pesquisa eleitoral. Ideologias, cores e atributos incluem aproximações. O quadro documenta 01/01/2026; acontecimentos posteriores seguem a simulação. Demais personagens podem continuar genéricos. Parentes fictícios herdados são desvinculados na inicialização; eventos familiares futuros são simulação.
 
-## Oficina Steam e pacote completo
+## Publicação na Steam
 
-| Componente | Entrega |
-|---|---|
-| Mod de apresentação, no formato da Oficina | Nomes/siglas e nome/foto de Lula; a Oficina sozinha não cria os novos partidos e dirigentes. |
-| Instalador completo do GitHub | Mod de apresentação + integração de novas campanhas, 47 identidades e 45 fotos. |
+O conteúdo está preparado para o usuário publicar pelo **Estúdio de mods**. O link da página da Oficina será acrescentado após o envio ser aceito pela Steam. [Instruções de publicação](oficina/PUBLICACAO-0.8.2.md).
 
-A criação da prévia privada na Steam foi recusada com **access denied**; não há item/link confirmado. [Prévia local e registro da tentativa](docs/steam-previa.md). A publicação pública depende da revisão final. O erro ainda não teve causa determinada.
+A Oficina fornece a apresentação; o **instalador Full do GitHub** acrescenta os partidos e as identidades às campanhas novas, conforme a comparação acima.
 
 ## Fontes, créditos e documentação
 
@@ -85,7 +82,9 @@ Originais em `%LOCALAPPDATA%/BrasilRealEditor/backups`; arquivos anteriores do m
 
 Na 0.7: duas sementes, 47 identidades, salvar/recarregar e um dia; desktop com 20 opções, 47 registros e 42 fotos; 44/44 referências partidárias preservadas. Uma cópia de save antigo manteve quatro partidos e zero identidades novas. Na 0.6, os testes de 310 dias/eleições e 31 dias precedem as identidades atuais; não são prova de longo prazo da 0.8.
 
-A 0.8 passou no teste desktop isolado com 45 fotos. O EXE compilado foi inspecionado e analisado pelo Defender, mas não foi executado nesta rodada: a revisão automática rejeitou o comando combinado de self-test, sem indicar motivo específico. A validação específica está registrada junto à release. Não foi implementado nem validado um gabinete de 38 cargos funcionais.
+A 0.8 passou no teste desktop isolado com 45 fotos. Na 0.8.2, 16 casos de registro inválido foram recusados antes de preparar o mod; testes de instalação/restauração e rollback passaram em temporários. A atualização do EXE real foi concluída pelo usuário, e os arquivos instalados e nove saves foram conferidos. Instalação limpa e restauração completa pelo EXE ainda não tiveram teste manual nesta rodada. [Validação da 0.8.2](docs/validacao-instalador-0.8.2.json).
+
+Não foi implementado um gabinete de 38 cargos funcionais.
 
 </details>
 
